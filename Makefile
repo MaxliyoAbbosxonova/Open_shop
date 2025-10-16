@@ -12,5 +12,5 @@ compile_msg:
 	python manage.py compilemessages -i .venv
 
 mig2:
-	docker compose exec backend_service python manage.py makemigrations
-	docker compose exec backend_service python manage.py migrate
+	docker compose exec -it backend_service sh -c 'uv run python3 manage.py makemigrations'
+	docker compose exec -it backend_service sh -c 'uv run python3 manage.py migrate'

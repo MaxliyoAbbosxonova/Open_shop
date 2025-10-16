@@ -2,15 +2,12 @@ import re
 
 from django.contrib.auth.models import AbstractUser
 from django.db.models import Model, Func
-from django.db.models.fields import CharField, EmailField, UUIDField
+from django.db.models.fields import CharField, UUIDField
 from django.core.exceptions import ValidationError
 
 
 
 class GenRandomUUID(Func):
-    """
-    Represents the PostgreSQL gen_random_uuid() function.
-    """
     function = "gen_random_uuid"
     template = "%(function)s()"  # no args
     output_field = UUIDField()
