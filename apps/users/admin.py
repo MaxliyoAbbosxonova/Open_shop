@@ -1,3 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
+from apps.users.models  import  User
+@admin.register(User)
+class UsersAdmin(admin.ModelAdmin):
+    list_display = ('id','phone')
