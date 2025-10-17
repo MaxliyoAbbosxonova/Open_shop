@@ -6,7 +6,7 @@ __pycache__/
 # Virtual muhit
 venv/
 ENV/
-.env/
+env/.env/
 .venv/
 
 # Jupyter notebook
@@ -18,7 +18,7 @@ ENV/
 *.bak
 
 # Maksfiy sozlamalar
-.env
+env/.env
 *.env
 
 # JetBrains / PyCharm (.idea) katalogi

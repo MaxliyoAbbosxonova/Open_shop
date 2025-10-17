@@ -6,8 +6,6 @@ from apps.users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerialize
 from apps.users.utils import random_code, send_sms_code, check_sms_code
 
 
-# Create your views here.
-
 class SendCodeAPIView(APIView):
     serializers_class=SendSmsCodeSerializer
     def post(self, request):

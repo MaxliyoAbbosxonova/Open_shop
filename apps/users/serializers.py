@@ -6,7 +6,7 @@ from django.db.models import CharField
 from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.tokens import RefreshToken, Token
 
-from apps.users.models import User
+from users.models import User
 
 
 class UserModelSerializer(ModelSerializer):

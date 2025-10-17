@@ -1,20 +1,20 @@
-
 import os
+import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
 
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+sys.path.append(os.path.join(BASE_DIR, 'apps'))
+
+if not os.path.exists('/.dockerenv'):
+    load_dotenv('env/.env')
 
 SECRET_KEY = 'django-insecure-djh$un+@qqb8jnw7ul3q48+m*m=-wkp^@i9*t++$#^qkexu)8_'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-load_dotenv('.env')
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',
+    'mptt',
+    'users',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -59,7 +60,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
-
+AUTH_USER_MODEL = 'users.User'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -75,7 +76,6 @@ DATABASES = {
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -95,14 +95,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -115,7 +113,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -125,9 +122,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'users.User'
-
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Your Project API',
@@ -168,8 +162,6 @@ JAZZMIN_SETTINGS = {
     # Copyright on the footer
     "copyright": "Acme Library Ltd",
 
-    # List of model admins to search from the search bar, search bar omitted if excluded
-    # If you want to use a single search field you dont need to use a list, you can use a simple string
     "search_model": ["auth.User", "auth.Group"],
 
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
@@ -183,7 +175,7 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [
 
         # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
         {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
@@ -217,8 +209,6 @@ JAZZMIN_SETTINGS = {
 
     # Hide these apps when generating side menu e.g (auth)
     "hide_apps": [],
-
-    # Hide these models when generating side menu (e.g auth.user)
     "hide_models": [],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
