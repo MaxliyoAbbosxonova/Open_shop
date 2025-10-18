@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from users.views import SendCodeAPIView, LoginAPIView
+from apps.users.views import SendCodeAPIView, LoginAPIView
 
 urlpatterns=[
     path('auth/send-code', SendCodeAPIView.as_view(), name='token_obtain_pair'),

@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY ./ /app
 
-RUN uv sync
+COPY . .
 
+# kutubxonalarni o‘rnatish
+RUN uv sync --frozen --no-cache
 CMD ["uv", "run", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
 

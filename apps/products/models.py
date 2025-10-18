@@ -15,7 +15,7 @@ class Category(MPTTModel):
 
 
 class Product(Model):
-    category = ForeignKey('users.Category', on_delete=CASCADE, related_name='products')
+    category = ForeignKey('products.Category', on_delete=CASCADE, related_name='products')
     name = CharField(max_length=150)
     description = TextField(blank=True)
     price = DecimalField(max_digits=10, decimal_places=2)
