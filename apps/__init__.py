@@ -1,2 +1,1 @@
-from apps import users
 

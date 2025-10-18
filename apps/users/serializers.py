@@ -77,3 +77,5 @@ class VerifySmsCodeSerializer(ModelSerializer):
     @classmethod
     def get_token(cls, user) -> Token:
         return cls.token_class.for_user(user)  # type: ignore
+
+

@@ -14,7 +14,7 @@ if not os.path.exists('/.dockerenv'):
 SECRET_KEY = 'django-insecure-djh$un+@qqb8jnw7ul3q48+m*m=-wkp^@i9*t++$#^qkexu)8_'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -117,6 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

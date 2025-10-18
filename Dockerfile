@@ -6,5 +6,5 @@ COPY ./ /app
 
 RUN uv sync
 
-CMD ["uv", "run", "python3", "manage.py", "runserver", "0:8000"]
+CMD ["uv", "run", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
 
