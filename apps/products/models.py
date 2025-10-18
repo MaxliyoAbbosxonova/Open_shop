@@ -1,4 +1,3 @@
-from django.db.models import ImageField
 from django.db.models import Model, CASCADE, TextField, DecimalField, DateTimeField, ForeignKey
 from django.db.models.fields import CharField
 from mptt.fields import TreeForeignKey

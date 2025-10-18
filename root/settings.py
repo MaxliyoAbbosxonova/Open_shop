@@ -25,8 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mptt',
-    'users',
+    # 'users',
     'products',
+    'users_1',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -61,7 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users_1.User'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

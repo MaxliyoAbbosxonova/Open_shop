@@ -2,25 +2,9 @@ import re
 
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
-from django.db.models import Model, Func
-from django.db.models.fields import CharField, UUIDField
-from mptt.models import MPTTModel
+from django.db.models.fields import CharField
 
-
-class GenRandomUUID(Func):
-    function = "gen_random_uuid"
-    template = "%(function)s()"  # no args
-    output_field = UUIDField()
-
-    class Meta:
-        abstract = True
-
-
-class UUIDBaseModel(Model):
-    id = UUIDField(primary_key=True, db_default=GenRandomUUID(), editable=False)
-
-    class Meta:
-        abstract = True
+from users_1.models.base import UUIDBaseModel
 
 
 class User(AbstractUser, UUIDBaseModel):

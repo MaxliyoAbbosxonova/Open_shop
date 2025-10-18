@@ -6,7 +6,7 @@ from django.db.models import CharField
 from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.tokens import RefreshToken, Token
 
-from users.models import User
+from users_1.models.user import User
 
 
 class UserModelSerializer(ModelSerializer):
@@ -76,6 +76,4 @@ class VerifySmsCodeSerializer(ModelSerializer):
 
     @classmethod
     def get_token(cls, user) -> Token:
-        return cls.token_class.for_user(user)  # type: ignore
-
-
+        return cls.token_class.for_user(user)
