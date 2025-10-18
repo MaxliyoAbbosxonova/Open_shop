@@ -1,12 +1,13 @@
 import re
 from typing import Any
+
 from django.contrib.auth import authenticate
 from django.core.exceptions import ValidationError
-from django.db.models import CharField
+from rest_framework.fields import CharField
 from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.tokens import RefreshToken, Token
 
-from users_1.models.user import User
+from users.models import User
 
 
 class UserModelSerializer(ModelSerializer):

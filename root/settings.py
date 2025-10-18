@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'mptt',
     # 'users',
     'products',
-    'users_1',
+    'users',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -62,7 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
-AUTH_USER_MODEL = 'users_1.User'
+AUTH_USER_MODEL = 'users.User'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
