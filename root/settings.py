@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # 'users',
     'products',
     'users',
+    'shared',
 
     'rest_framework',
     'rest_framework_simplejwt',
