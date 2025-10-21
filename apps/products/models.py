@@ -11,10 +11,10 @@ from shared.models import CreatedBaseModel, UUIDBaseModel
 
 
 class Category(MPTTModel):
-    name = CharField(max_length=50, unique=True)
-    # TODO slug, icon
-    slug=SlugField(max_length=50, unique=True)
-    parent = TreeForeignKey('self', on_delete=CASCADE, null=True, blank=True, related_name='subcategory')
+    name = CharField(max_length=255)
+    # TODO icon
+    slug = SlugField(max_length=255, unique=True, editable=False)
+    parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='subcategory')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -28,16 +28,16 @@ class Category(MPTTModel):
         order_insertion_by = ['name']
 
 
-class Product(CreatedBaseModel,UUIDBaseModel):  # TODO CreatedBasemodel
+class Product(CreatedBaseModel, UUIDBaseModel):  # TODO CreatedBasemodel
     # TODO slug = id + name
-    slug =SlugField(max_length=50, unique=True)
-    category = ForeignKey('products.Category', on_delete=CASCADE, related_name='products')
-    name = CharField(max_length=150)
+    name = CharField(max_length=255)
+    slug = SlugField(max_length=50, unique=True)
+    category = ForeignKey('products.Category', CASCADE, to_field='slug', related_name='products')
     description = CKEditor5Field(blank=False, null=False)
     price = DecimalField(max_digits=10, decimal_places=2)
     created_at = DateTimeField(auto_now_add=True)
-    image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],null=True, blank=True)
-
+    image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
+                       null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -50,7 +50,6 @@ class Product(CreatedBaseModel,UUIDBaseModel):  # TODO CreatedBasemodel
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
-
 
 # TODO ProductImage
 
