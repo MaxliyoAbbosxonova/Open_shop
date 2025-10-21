@@ -1,6 +1,7 @@
 import re
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
+from django.db.models import EmailField
 from django.db.models.fields import CharField
 
 from shared.models import UUIDBaseModel
@@ -8,7 +9,7 @@ from shared.models import UUIDBaseModel
 
 class User(AbstractUser, UUIDBaseModel):
     phone = CharField(max_length=11, unique=True)
-    email = None
+    email = EmailField(unique=True,null=True,blank=True)
     username = None
 
     USERNAME_FIELD = 'phone'

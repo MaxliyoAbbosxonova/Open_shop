@@ -12,6 +12,7 @@ class SendCodeAPIView(APIView):
         serializer = SendSmsCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         code=random_code()
+        print(code)
         phone=serializer.validated_data['phone']
         send_sms_code(phone, code)
         return Response({"message":"send sms code"})
