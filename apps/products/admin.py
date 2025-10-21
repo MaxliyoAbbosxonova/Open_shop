@@ -4,8 +4,10 @@ from products.models import Category, Product
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ('id','name','parent')
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name','price','created_at')
+    prepopulated_fields = {'slug': ('name',)}
+    list_display = ('name', 'slug', 'price', 'category')

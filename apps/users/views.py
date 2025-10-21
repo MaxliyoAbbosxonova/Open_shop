@@ -7,7 +7,7 @@ from users.utils import random_code, send_sms_code, check_sms_code
 
 
 class SendCodeAPIView(APIView):
-    serializers_class=SendSmsCodeSerializer
+    serializers_class = SendSmsCodeSerializer
     def post(self, request):
         serializer = SendSmsCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

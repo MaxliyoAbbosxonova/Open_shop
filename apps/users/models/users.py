@@ -1,10 +1,9 @@
 import re
-
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db.models.fields import CharField
 
-from users.models.base import UUIDBaseModel
+from shared.models import UUIDBaseModel
 
 
 class User(AbstractUser, UUIDBaseModel):

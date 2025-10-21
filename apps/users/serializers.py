@@ -1,12 +1,10 @@
 import re
 from typing import Any
-
 from django.contrib.auth import authenticate
 from django.core.exceptions import ValidationError
 from rest_framework.fields import CharField
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, Serializer
 from rest_framework_simplejwt.tokens import RefreshToken, Token
-
 from users.models import User
 
 
@@ -34,7 +32,7 @@ class SendSmsCodeSerializer(ModelSerializer):
         return super().validate(attrs)
 
 
-class VerifySmsCodeSerializer(ModelSerializer):
+class VerifySmsCodeSerializer(Serializer):
     phone = CharField(default='933977090')
     code = CharField(default='707070')
     token_class = RefreshToken
@@ -78,3 +76,5 @@ class VerifySmsCodeSerializer(ModelSerializer):
     @classmethod
     def get_token(cls, user) -> Token:
         return cls.token_class.for_user(user)
+
+
