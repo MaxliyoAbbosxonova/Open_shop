@@ -1,0 +1,16 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Texnika",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWKvuEsxI0eaWhJzR8RinO50ChxDS7UECLtA&s",
+      "slug": "texnika",
+      "parent": null,
+      "lft": 1,
+      "rght": 2,
+      "tree_id": 1,
+      "level": 0
+    }
+  }
+]

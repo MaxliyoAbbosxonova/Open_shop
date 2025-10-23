@@ -12,7 +12,7 @@ from shared.models import CreatedBaseModel, UUIDBaseModel
 
 class Category(MPTTModel):
     name = CharField(max_length=255)
-    icon=URLField(max_length=255,null=True,blank=True)
+    icon = URLField(max_length=255, null=True, blank=True)
     slug = SlugField(max_length=255, unique=True, editable=False)
     parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='subcategory')
 
@@ -37,6 +37,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
                        null=True, blank=True)
     attributes = HStoreField(blank=True, null=True)
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
@@ -48,8 +49,3 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
-
-
-
-# django form json
-# hstore django

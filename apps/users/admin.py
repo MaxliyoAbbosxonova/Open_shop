@@ -1,11 +1,13 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
+from django.contrib.auth.admin import UserAdmin
+
 from users.models import User
 
 
 @admin.register(User)
-class UserAdmin(ModelAdmin):
-    model = User
+# class UserModelAdmin(admin.ModelAdmin):
+class UserModelAdmin(UserAdmin):
     list_display = ('id', 'phone', 'email', 'is_active', 'is_staff')
     ordering = ('phone',)
     fieldsets = (
@@ -17,6 +19,6 @@ class UserAdmin(ModelAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('phone','password1','password2', 'is_active', 'is_staff', 'is_superuser'),
+            'fields': ('phone', 'email', 'password1', 'password2'),
         }),
     )

@@ -12,7 +12,6 @@ class CustomUserManager(UserManager):
     def _create_user(self, phone, password, **extra_fields):
         user = self._create_user_object(phone, password, **extra_fields)
         user.save(using=self._db)
-        user.set_unusable_password()
         return user
 
     def create_superuser(self, phone, password=None, **extra_fields):

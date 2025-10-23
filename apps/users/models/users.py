@@ -5,14 +5,16 @@ from django.db.models import EmailField
 from django.db.models.fields import CharField
 
 from shared.models import UUIDBaseModel
+from users.models.managers import CustomUserManager
 
 
 class User(AbstractUser, UUIDBaseModel):
     phone = CharField(max_length=11, unique=True)
-    email = EmailField(unique=True,null=True,blank=True)
+    email = EmailField(unique=True, null=True, blank=True)
     username = None
 
     USERNAME_FIELD = 'phone'
+    objects = CustomUserManager()
 
     def check_phone(self):
         digits = re.findall(r'\d', self.phone)
