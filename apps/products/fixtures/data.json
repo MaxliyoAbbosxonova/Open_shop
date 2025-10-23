@@ -1,0 +1,77 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Maishiy texnika",
+      "slug": "maishiy-texnika"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "Kiyim-kechak",
+      "slug": "kiyim-kechak"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Oshxona buyumlari",
+      "slug": "oshxona-buyumlari"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "category": "maishiy-texnika",
+      "name": "Changyutkich",
+      "slug": "changyutkich",
+      "price": "1200000.00",
+      "description": "Kuchli changyutkich, 2000W",
+
+      "attributes": {
+        "Quvvat": "2000W",
+        "Brend": "Samsung",
+        "Rang": "Kulrang"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "category": "kiyim-kechak",
+      "name": "Sport krossovka",
+      "slug": "sport-krossovka",
+      "price": "450000.00",
+      "description": "Yengil va qulay sport oyoq kiyimi",
+
+      "attributes": {
+        "Rang": "Qora",
+        "O‘lcham": "42",
+        "Brend": "Nike"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "category": "oshxona-buyumlari",
+      "name": "Qovurish tova",
+      "slug": "qovurish-tova",
+      "price": "150000.00",
+      "description": "Teflon qoplamali tova",
+
+      "attributes": {
+        "Material": "Teflon",
+        "Diametr": "28 sm",
+        "Rang": "Qora"
+      }
+    }
+  }
+]
