@@ -8,14 +8,15 @@ from users.utils import random_code, send_sms_code, check_sms_code
 
 class SendCodeAPIView(APIView):
     serializers_class = SendSmsCodeSerializer
+
     def post(self, request):
         serializer = SendSmsCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        code=random_code()
+        code = random_code()
         print(code)
-        phone=serializer.validated_data['phone']
+        phone = serializer.validated_data['phone']
         send_sms_code(phone, code)
-        return Response({"message":"send sms code"})
+        return Response({"message": "send sms code"})
 
 
 class LoginAPIView(APIView):

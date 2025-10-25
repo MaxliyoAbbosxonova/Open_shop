@@ -2,9 +2,36 @@
 
 
 task
-1. fixtures qo'shish
-2. uz, en til qo'shish
-3. argon2
+1. debug, secret_key larni .env ga chiqarish
+2. django hstore adminkada qosha olish (attribute)
+3. adminkada detail page da rasm chiqib tursin
+4.
+{
+    "id": 2,
+    "name": "Samsung",
+    "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+    "slug": "samsung",
+    "parent": {
+        "id": 1,
+        "name": "Telefon",
+        "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+        "slug": "telefon",
+        "parent": {
+            "id": 5,
+            "name": "Texnika",
+            "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+            "slug": "texnika",
+            "parent": null
+        }
+    }
+}
+
+5. flake8, isort
+6. category iconni imagefield qilish
+7. slugni saytdagidek qilish
+https://openshop.uz/shop/subcategory/203-foto-va-video-texnika
 
 
+api/v1/products/?category=203-foto-va-video-texnika
 
+8. list va detailga alohida serializer yozamiz (product)

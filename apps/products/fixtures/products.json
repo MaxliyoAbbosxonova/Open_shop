@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "HP Pavilion 15",
       "slug": "hp-pavilion-15",
       "category": "noutbuklar",
@@ -23,7 +23,7 @@
     "pk": 2,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Lenovo ThinkPad X1 Carbon",
       "slug": "lenovo-thinkpad-x1-carbon",
       "category": "noutbuklar",
@@ -42,7 +42,7 @@
     "pk": 3,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Acer Aspire 5",
       "slug": "acer-aspire-5",
       "category": "kompyuterlar",
@@ -61,7 +61,7 @@
     "pk": 4,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "iPhone 15 Pro",
       "slug": "iphone-15-pro",
       "category": "smartfonlar",
@@ -80,7 +80,7 @@
     "pk": 5,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Samsung Galaxy S24 Ultra",
       "slug": "samsung-galaxy-s24-ultra",
       "category": "smartfonlar",
@@ -99,7 +99,7 @@
     "pk": 6,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Artel HD Sovutkich",
       "slug": "artel-hd-sovutkich",
       "category": "sovutkichlar",
@@ -118,7 +118,7 @@
     "pk": 7,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Samsung Side-by-Side",
       "slug": "samsung-side-by-side",
       "category": "sovutkichlar",
@@ -137,7 +137,7 @@
     "pk": 8,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Tesla Model 3",
       "slug": "tesla-model-3",
       "category": "elektromobillar",
@@ -156,7 +156,7 @@
     "pk": 9,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Chevrolet Malibu",
       "slug": "chevrolet-malibu",
       "category": "yengil-avtomobillar",
@@ -175,7 +175,7 @@
     "pk": 10,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "BMW X5",
       "slug": "bmw-x5",
       "category": "yengil-avtomobillar",
@@ -194,7 +194,7 @@
     "pk": 11,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "CAT 320 Ekskavator",
       "slug": "cat-320-ekskavator",
       "category": "ekskavatorlar",
@@ -213,7 +213,7 @@
     "pk": 12,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Hitachi ZX200",
       "slug": "hitachi-zx200",
       "category": "ekskavatorlar",
@@ -232,7 +232,7 @@
     "pk": 13,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Nexen Roadian Tyres",
       "slug": "nexen-roadian-tyres",
       "category": "shinalar",
@@ -251,7 +251,7 @@
     "pk": 14,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Goodyear Eagle F1",
       "slug": "goodyear-eagle-f1",
       "category": "shinalar",
@@ -270,7 +270,7 @@
     "pk": 15,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Erkaklar Kostyumi Classic",
       "slug": "erkaklar-kostyumi-classic",
       "category": "kostyumlar",
@@ -289,7 +289,7 @@
     "pk": 16,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Ayollar Ko‘ylagi Elegant",
       "slug": "ayollar-koylagi-elegant",
       "category": "koylaklar",
@@ -308,7 +308,7 @@
     "pk": 17,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Bolalar Kurtkasi Winter Pro",
       "slug": "bolalar-kurtkasi-winter-pro",
       "category": "bolalar-kiyimlari",
@@ -327,7 +327,7 @@
     "pk": 18,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Dell Monitor 27 inch",
       "slug": "dell-monitor-27",
       "category": "kompyuterlar",
@@ -346,7 +346,7 @@
     "pk": 19,
     "fields": {
       "created_at": "2025-10-24T10:00:00Z",
-    "updated_at": "2025-10-24T10:00:00Z",
+      "updated_at": "2025-10-24T10:00:00Z",
       "name": "Artel Konditsioner Arctic",
       "slug": "artel-konditsioner-arctic",
       "category": "maishiy-texnika",

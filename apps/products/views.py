@@ -16,9 +16,11 @@ class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
 
+
 class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryModelSerializer
+
 
 class CategoryDetailAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
