@@ -3,15 +3,15 @@ from django.core.validators import FileExtensionValidator
 from django.db.models import Model, CASCADE, DecimalField, ForeignKey, ImageField, URLField
 from django.db.models.fields import CharField, SlugField
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
-
 from shared.models import CreatedBaseModel, UUIDBaseModel
 
 
 class Category(MPTTModel):
-    name = CharField(max_length=255)
+    name = CharField(max_length=255,verbose_name=_("Name"),)
     icon = URLField(max_length=255, null=True, blank=True)
     slug = SlugField(max_length=255, unique=True, editable=False)
     parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='subcategory')
@@ -26,16 +26,18 @@ class Category(MPTTModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
-
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
 class Product(CreatedBaseModel, UUIDBaseModel):
-    name = CharField(max_length=255)
+    name = CharField(verbose_name=_("Name"),max_length=255)
     slug = SlugField(max_length=50, unique=True)
-    category = ForeignKey('products.Category', CASCADE, to_field='slug', related_name='products')
-    description = CKEditor5Field(blank=False, null=False)
-    price = DecimalField(max_digits=10, decimal_places=2)
+    category = ForeignKey('products.Category', CASCADE, to_field='slug', related_name='products',verbose_name=_("Category"))
+    description = CKEditor5Field(verbose_name=_("Description"),blank=False, null=False)
+    price = DecimalField(verbose_name=_("Price"),max_digits=10, decimal_places=2)
     image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
-                       null=True, blank=True)
+                       null=True, blank=True,verbose_name=_("Image"))
     attributes = HStoreField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
@@ -49,3 +51,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
+
+    class Meta:
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')

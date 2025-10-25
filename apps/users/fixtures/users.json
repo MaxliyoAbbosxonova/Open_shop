@@ -1,38 +1,92 @@
 [
-  {
+{
+    "model": "users.user",
+    "pk": "80753562-9724-44eb-9ed5-cc531f3ce7c6",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$S7VDj5taIjQ44oEFEGpPuy$U853UY+gDH2cFDcfMDXzV6kbmLEMWC697Q4x3goVry0=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-24T19:04:29.192Z",
+        "phone": "877777777",
+        "email": "yetti@mail.ru",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "users.user",
     "pk": "8153f7d1-8916-40f3-99fc-cab1a07013c8",
     "fields": {
-      "password": "pbkdf2_sha256$1000000$5ddM69V6Nc4BG1avxxPJBf$udsPaBNyBcQI2o3g3WAmVcnpvlfwLLlVVgSMGhs9LQ4=",
-      "last_login": "2025-10-23T06:48:15.447Z",
-      "is_superuser": true,
-      "first_name": "",
-      "last_name": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2025-10-23T06:47:43.838Z",
-      "phone": "901001010",
-      "email": "admin@mail.ru",
-      "groups": [],
-      "user_permissions": []
+        "password": "pbkdf2_sha256$1000000$5ddM69V6Nc4BG1avxxPJBf$udsPaBNyBcQI2o3g3WAmVcnpvlfwLLlVVgSMGhs9LQ4=",
+        "last_login": "2025-10-24T18:26:28.470Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-10-23T06:47:43.838Z",
+        "phone": "901001010",
+        "email": "admin@mail.ru",
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
+    "model": "users.user",
+    "pk": "b00612cb-dc34-4fd0-b7c8-6069458f47b4",
+    "fields": {
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$RUc2amVRMGJESFk5MWlHUjNGMjVnag$MRa36+Q8TIZ0GEtk32+FKePyI2lBJ73fjCQbdNraTLg",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-25T01:45:12.468Z",
+        "phone": "900000000",
+        "email": "nol@mail.ru",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "users.user",
     "pk": "c17f3851-d96e-49c6-8ef8-c6b2cdbafef4",
     "fields": {
-      "password": "pbkdf2_sha256$1000000$smEzeN3lCPrrqxo12XMnG1$QYFDnzg2ahCgP2Jb+tJHbpffYWEM9pHnrUnT8TeK1RA=",
-      "last_login": null,
-      "is_superuser": false,
-      "first_name": "shokir",
-      "last_name": "Gayratov",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2025-10-23T06:56:27.872Z",
-      "phone": "911001120",
-      "email": "shokir@mail.ru",
-      "groups": [],
-      "user_permissions": []
+        "password": "pbkdf2_sha256$1000000$smEzeN3lCPrrqxo12XMnG1$QYFDnzg2ahCgP2Jb+tJHbpffYWEM9pHnrUnT8TeK1RA=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "shokir",
+        "last_name": "Gayratov",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-10-23T06:56:27.872Z",
+        "phone": "911001120",
+        "email": "shokir@mail.ru",
+        "groups": [],
+        "user_permissions": []
     }
-  }
+},
+{
+    "model": "users.user",
+    "pk": "e7c20598-38d8-440d-928e-ded8bdbfaffa",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$EYGiBNDxNhLv5Zvk2vfAX5$Y2dh7lXeSM/M0eZKBkQMie7Sasl3QhYqG8EuLz0CpV8=",
+        "last_login": null,
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-10-24T17:24:01.511Z",
+        "phone": "933977090",
+        "email": "makhliyoabboskhonova@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+}
 ]

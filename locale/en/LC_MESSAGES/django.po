@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-25 01:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/products/models.py:14 apps/products/models.py:34
+msgid "Name"
+msgstr "Name"
+
+#: apps/products/models.py:30 apps/products/models.py:36
+msgid "Category"
+msgstr "Category"
+
+#: apps/products/models.py:31
+msgid "Categories"
+msgstr "Categories"
+
+#: apps/products/models.py:37
+msgid "Description"
+msgstr "Description"
+
+#: apps/products/models.py:38
+msgid "Price"
+msgstr "Price"
+
+#: apps/products/models.py:40
+msgid "Image"
+msgstr "Image"
+
+#: apps/products/models.py:56
+msgid "Product"
+msgstr "Product"
+
+#: apps/products/models.py:57
+msgid "Products"
+msgstr "Products"
+
+#: apps/users/models/users.py:12
+msgid "Phone number"
+msgstr "Phone number"
+
+#: apps/users/models/users.py:13
+msgid "Email address"
+msgstr "Email address"
+
+#: apps/users/models/users.py:32
+msgid "User"
+msgstr "User"
+
+#: apps/users/models/users.py:33
+msgid "Users"
+msgstr "Users"

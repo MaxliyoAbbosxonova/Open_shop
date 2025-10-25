@@ -4,13 +4,281 @@
     "pk": 1,
     "fields": {
       "name": "Texnika",
-      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWKvuEsxI0eaWhJzR8RinO50ChxDS7UECLtA&s",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3063/3063820.png",
       "slug": "texnika",
       "parent": null,
       "lft": 1,
-      "rght": 2,
+      "rght": 14,
       "tree_id": 1,
       "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "Kompyuterlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+      "slug": "kompyuterlar",
+      "parent": 1,
+      "lft": 2,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Noutbuklar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/843/843310.png",
+      "slug": "noutbuklar",
+      "parent": 2,
+      "lft": 3,
+      "rght": 4,
+      "tree_id": 1,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "name": "Telefonlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/15/15874.png",
+      "slug": "telefonlar",
+      "parent": 1,
+      "lft": 6,
+      "rght": 9,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "Smartfonlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3616/3616989.png",
+      "slug": "smartfonlar",
+      "parent": 4,
+      "lft": 7,
+      "rght": 8,
+      "tree_id": 1,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "Maishiy texnika",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046880.png",
+      "slug": "maishiy-texnika",
+      "parent": 1,
+      "lft": 10,
+      "rght": 13,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+      "name": "Sovutkichlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2324/2324390.png",
+      "slug": "sovutkichlar",
+      "parent": 6,
+      "lft": 11,
+      "rght": 12,
+      "tree_id": 1,
+      "level": 2
+    }
+  },
+
+  {
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+      "name": "Avtomobil",
+      "icon": "https://cdn-icons-png.flaticon.com/512/743/743922.png",
+      "slug": "avtomobil",
+      "parent": null,
+      "lft": 1,
+      "rght": 14,
+      "tree_id": 2,
+      "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+      "name": "Yengil avtomobillar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3448/3448611.png",
+      "slug": "yengil-avtomobillar",
+      "parent": 8,
+      "lft": 2,
+      "rght": 5,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+      "name": "Elektromobillar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3076/3076020.png",
+      "slug": "elektromobillar",
+      "parent": 9,
+      "lft": 3,
+      "rght": 4,
+      "tree_id": 2,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 11,
+    "fields": {
+      "name": "Og'ir texnika",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3204/3204712.png",
+      "slug": "ogir-texnika",
+      "parent": 8,
+      "lft": 6,
+      "rght": 9,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 12,
+    "fields": {
+      "name": "Ekskavatorlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/4442/4442713.png",
+      "slug": "ekskavatorlar",
+      "parent": 11,
+      "lft": 7,
+      "rght": 8,
+      "tree_id": 2,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 13,
+    "fields": {
+      "name": "Avto ehtiyot qismlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2554/2554999.png",
+      "slug": "avto-ehtiyot-qismlar",
+      "parent": 8,
+      "lft": 10,
+      "rght": 13,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 14,
+    "fields": {
+      "name": "Shinalar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/621/621768.png",
+      "slug": "shinalar",
+      "parent": 13,
+      "lft": 11,
+      "rght": 12,
+      "tree_id": 2,
+      "level": 2
+    }
+  },
+
+  {
+    "model": "products.category",
+    "pk": 15,
+    "fields": {
+      "name": "Kiyim-kechak",
+      "icon": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "slug": "kiyim-kechak",
+      "parent": null,
+      "lft": 1,
+      "rght": 14,
+      "tree_id": 3,
+      "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 16,
+    "fields": {
+      "name": "Erkaklar kiyimlari",
+      "icon": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "slug": "erkaklar-kiyimlari",
+      "parent": 15,
+      "lft": 2,
+      "rght": 5,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 17,
+    "fields": {
+      "name": "Kostyumlar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/892/892699.png",
+      "slug": "kostyumlar",
+      "parent": 16,
+      "lft": 3,
+      "rght": 4,
+      "tree_id": 3,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 18,
+    "fields": {
+      "name": "Ayollar kiyimlari",
+      "icon": "https://cdn-icons-png.flaticon.com/512/892/892692.png",
+      "slug": "ayollar-kiyimlari",
+      "parent": 15,
+      "lft": 6,
+      "rght": 9,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 19,
+    "fields": {
+      "name": "Ko'ylaklar",
+      "icon": "https://cdn-icons-png.flaticon.com/512/892/892721.png",
+      "slug": "koylaklar",
+      "parent": 18,
+      "lft": 7,
+      "rght": 8,
+      "tree_id": 3,
+      "level": 2
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 20,
+    "fields": {
+      "name": "Bolalar kiyimlari",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2615/2615185.png",
+      "slug": "bolalar-kiyimlari",
+      "parent": 15,
+      "lft": 10,
+      "rght": 13,
+      "tree_id": 3,
+      "level": 1
     }
   }
 ]

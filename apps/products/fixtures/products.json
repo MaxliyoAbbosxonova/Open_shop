@@ -1,0 +1,363 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "HP Pavilion 15",
+      "slug": "hp-pavilion-15",
+      "category": "noutbuklar",
+      "description": "HP Pavilion 15 — zamonaviy dizayn va kuchli ishlashga ega noutbuk. O‘quv va ish uchun ideal.",
+      "price": "899.99",
+      "image": "products/2025/10/24/hp_pavilion_15.jpg",
+      "attributes": {
+        "RAM": "16GB",
+        "SSD": "512GB",
+        "CPU": "Intel Core i7"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "slug": "lenovo-thinkpad-x1-carbon",
+      "category": "noutbuklar",
+      "description": "Yuqori sifatli ish noutbuki, engil va mustahkam korpusga ega.",
+      "price": "1199.50",
+      "image": "products/2025/10/24/thinkpad_x1.jpg",
+      "attributes": {
+        "RAM": "16GB",
+        "SSD": "1TB",
+        "CPU": "Intel Core i7"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Acer Aspire 5",
+      "slug": "acer-aspire-5",
+      "category": "kompyuterlar",
+      "description": "Acer Aspire 5 — kundalik foydalanish uchun qulay va bardoshli noutbuk.",
+      "price": "599.00",
+      "image": "products/2025/10/24/acer_aspire_5.png",
+      "attributes": {
+        "RAM": "8GB",
+        "SSD": "256GB",
+        "CPU": "Intel Core i5"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro",
+      "category": "smartfonlar",
+      "description": "Apple kompaniyasining yangi flagman modeli, kuchli A17 Pro chip bilan.",
+      "price": "1299.00",
+      "image": "products/2025/10/24/iphone15pro.jpg",
+      "attributes": {
+        "Display": "6.1 inch OLED",
+        "Camera": "48MP",
+        "Storage": "256GB"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Samsung Galaxy S24 Ultra",
+      "slug": "samsung-galaxy-s24-ultra",
+      "category": "smartfonlar",
+      "description": "108MP kamera va kuchli Snapdragon 8 Gen 3 protsessor bilan.",
+      "price": "1190.00",
+      "image": "products/2025/10/24/s24ultra.jpg",
+      "attributes": {
+        "Display": "6.8 inch AMOLED",
+        "Camera": "108MP",
+        "Battery": "5000mAh"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Artel HD Sovutkich",
+      "slug": "artel-hd-sovutkich",
+      "category": "sovutkichlar",
+      "description": "Katta hajmli energiya tejamkor sovutkich.",
+      "price": "499.00",
+      "image": "products/2025/10/24/artel_hd_sovutkich.jpg",
+      "attributes": {
+        "Hajm": "380L",
+        "Energiya": "A+",
+        "Turi": "Ikki kamerali"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Samsung Side-by-Side",
+      "slug": "samsung-side-by-side",
+      "category": "sovutkichlar",
+      "description": "Smart sensor va muz dispenserli zamonaviy sovutkich.",
+      "price": "890.00",
+      "image": "products/2025/10/24/samsung_fridge.jpg",
+      "attributes": {
+        "Hajm": "500L",
+        "Dispenser": "Ha",
+        "Sensor": "Smart cooling"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Tesla Model 3",
+      "slug": "tesla-model-3",
+      "category": "elektromobillar",
+      "description": "Tesla Model 3 — ekologik toza, zamonaviy elektromobil.",
+      "price": "39999.00",
+      "image": "products/2025/10/24/tesla_model3.jpg",
+      "attributes": {
+        "Quvvat": "258 HP",
+        "Masofa": "500 km",
+        "Batareya": "75 kWh"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Chevrolet Malibu",
+      "slug": "chevrolet-malibu",
+      "category": "yengil-avtomobillar",
+      "description": "O‘zbekiston uchun eng mashhur sedan avtomobillardan biri.",
+      "price": "27000.00",
+      "image": "products/2025/10/24/malibu.jpg",
+      "attributes": {
+        "Motor": "1.5 Turbo",
+        "Transmissiya": "Avtomat",
+        "Rang": "Oq"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "BMW X5",
+      "slug": "bmw-x5",
+      "category": "yengil-avtomobillar",
+      "description": "BMW X5 — qulaylik, dizayn va qudrat uyg‘unligi.",
+      "price": "75000.00",
+      "image": "products/2025/10/24/bmw_x5.jpg",
+      "attributes": {
+        "Motor": "3.0 Turbo",
+        "Transmissiya": "Avtomat",
+        "Quvvat": "360 HP"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "CAT 320 Ekskavator",
+      "slug": "cat-320-ekskavator",
+      "category": "ekskavatorlar",
+      "description": "Og‘ir qurilish ishlari uchun professional ekskavator.",
+      "price": "120000.00",
+      "image": "products/2025/10/24/cat_320.jpg",
+      "attributes": {
+        "Ogirligi": "21 tonna",
+        "Dvigatel": "CAT C6.6",
+        "Yoqilg'i": "Dizel"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Hitachi ZX200",
+      "slug": "hitachi-zx200",
+      "category": "ekskavatorlar",
+      "description": "Yuqori unumli va mustahkam ekskavator.",
+      "price": "98000.00",
+      "image": "products/2025/10/24/hitachi_zx200.jpg",
+      "attributes": {
+        "Ogirligi": "20 tonna",
+        "Dvigatel": "Isuzu",
+        "Boshqaruv": "Gidravlik"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Nexen Roadian Tyres",
+      "slug": "nexen-roadian-tyres",
+      "category": "shinalar",
+      "description": "SUV avtomobillari uchun mos, bardoshli shinalar.",
+      "price": "120.00",
+      "image": "products/2025/10/24/nexen_tyres.jpg",
+      "attributes": {
+        "O‘lcham": "225/55R18",
+        "Turi": "Yo‘l shinası",
+        "Brend": "Nexen"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Goodyear Eagle F1",
+      "slug": "goodyear-eagle-f1",
+      "category": "shinalar",
+      "description": "Yuqori tezlikdagi avtomobillar uchun sport shinalar.",
+      "price": "210.00",
+      "image": "products/2025/10/24/goodyear_f1.jpg",
+      "attributes": {
+        "O‘lcham": "245/40R19",
+        "Turi": "Yozgi",
+        "Brend": "Goodyear"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Erkaklar Kostyumi Classic",
+      "slug": "erkaklar-kostyumi-classic",
+      "category": "kostyumlar",
+      "description": "Ofis uchun mo‘ljallangan klassik erkaklar kostyumi.",
+      "price": "150.00",
+      "image": "products/2025/10/24/erkak_kostyum.jpg",
+      "attributes": {
+        "Turi": "Klassik",
+        "Rang": "Qora",
+        "O‘lcham": "50"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Ayollar Ko‘ylagi Elegant",
+      "slug": "ayollar-koylagi-elegant",
+      "category": "koylaklar",
+      "description": "Bayram va kechki tadbirlar uchun nafis ayollar ko‘ylagi.",
+      "price": "180.00",
+      "image": "products/2025/10/24/ayollar_koylak.jpg",
+      "attributes": {
+        "Rang": "Qizil",
+        "Material": "Atlas",
+        "O‘lcham": "M"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Bolalar Kurtkasi Winter Pro",
+      "slug": "bolalar-kurtkasi-winter-pro",
+      "category": "bolalar-kiyimlari",
+      "description": "Sovuq qish kunlari uchun mo‘ljallangan issiq kurtka.",
+      "price": "90.00",
+      "image": "products/2025/10/24/bolalar_kurtka.jpg",
+      "attributes": {
+        "Rang": "Ko‘k",
+        "Turi": "Qishki",
+        "O‘lcham": "120 sm"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Dell Monitor 27 inch",
+      "slug": "dell-monitor-27",
+      "category": "kompyuterlar",
+      "description": "Full HD keng ekranli 27 dyuymli monitor.",
+      "price": "250.00",
+      "image": "products/2025/10/24/dell_monitor.jpg",
+      "attributes": {
+        "Diagonal": "27 inch",
+        "Rezolyutsiya": "1920x1080",
+        "Turi": "IPS"
+      }
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "created_at": "2025-10-24T10:00:00Z",
+    "updated_at": "2025-10-24T10:00:00Z",
+      "name": "Artel Konditsioner Arctic",
+      "slug": "artel-konditsioner-arctic",
+      "category": "maishiy-texnika",
+      "description": "Tejamkor va jim ishlaydigan konditsioner.",
+      "price": "600.00",
+      "image": "products/2025/10/24/artel_konditsioner.jpg",
+      "attributes": {
+        "Quvvat": "12000 BTU",
+        "Energiya": "A++",
+        "Boshqaruv": "Pult"
+      }
+    }
+  }
+]
