@@ -4,11 +4,11 @@
     "pk": 1,
     "fields": {
       "name": "Texnika",
-      "icon": "https://cdn-icons-png.flaticon.com/512/3063/3063820.png",
       "slug": "texnika",
+      "icon": "categories/texnika.png",
       "parent": null,
       "lft": 1,
-      "rght": 14,
+      "rght": 40,
       "tree_id": 1,
       "level": 0
     }
@@ -17,12 +17,12 @@
     "model": "products.category",
     "pk": 2,
     "fields": {
-      "name": "Kompyuterlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
-      "slug": "kompyuterlar",
+      "name": "Telefon",
+      "slug": "telefon",
+      "icon": "categories/telefon.png",
       "parent": 1,
       "lft": 2,
-      "rght": 5,
+      "rght": 9,
       "tree_id": 1,
       "level": 1
     }
@@ -31,9 +31,9 @@
     "model": "products.category",
     "pk": 3,
     "fields": {
-      "name": "Noutbuklar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/843/843310.png",
-      "slug": "noutbuklar",
+      "name": "Samsung",
+      "slug": "samsung",
+      "icon": "categories/samsung.png",
       "parent": 2,
       "lft": 3,
       "rght": 4,
@@ -45,24 +45,24 @@
     "model": "products.category",
     "pk": 4,
     "fields": {
-      "name": "Telefonlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/15/15874.png",
-      "slug": "telefonlar",
-      "parent": 1,
-      "lft": 6,
-      "rght": 9,
+      "name": "Apple",
+      "slug": "apple",
+      "icon": "categories/apple.png",
+      "parent": 2,
+      "lft": 5,
+      "rght": 6,
       "tree_id": 1,
-      "level": 1
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 5,
     "fields": {
-      "name": "Smartfonlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/3616/3616989.png",
-      "slug": "smartfonlar",
-      "parent": 4,
+      "name": "Xiaomi",
+      "slug": "xiaomi",
+      "icon": "categories/xiaomi.png",
+      "parent": 2,
       "lft": 7,
       "rght": 8,
       "tree_id": 1,
@@ -73,12 +73,12 @@
     "model": "products.category",
     "pk": 6,
     "fields": {
-      "name": "Maishiy texnika",
-      "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046880.png",
-      "slug": "maishiy-texnika",
+      "name": "Kompyuter",
+      "slug": "kompyuter",
+      "icon": "categories/kompyuter.png",
       "parent": 1,
       "lft": 10,
-      "rght": 13,
+      "rght": 17,
       "tree_id": 1,
       "level": 1
     }
@@ -87,9 +87,9 @@
     "model": "products.category",
     "pk": 7,
     "fields": {
-      "name": "Sovutkichlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/2324/2324390.png",
-      "slug": "sovutkichlar",
+      "name": "Noutbuk",
+      "slug": "noutbuk",
+      "icon": "categories/noutbuk.png",
       "parent": 6,
       "lft": 11,
       "rght": 12,
@@ -97,74 +97,73 @@
       "level": 2
     }
   },
-
   {
     "model": "products.category",
     "pk": 8,
     "fields": {
-      "name": "Avtomobil",
-      "icon": "https://cdn-icons-png.flaticon.com/512/743/743922.png",
-      "slug": "avtomobil",
-      "parent": null,
-      "lft": 1,
+      "name": "Monitor",
+      "slug": "monitor",
+      "icon": "categories/monitor.png",
+      "parent": 6,
+      "lft": 13,
       "rght": 14,
-      "tree_id": 2,
-      "level": 0
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 9,
     "fields": {
-      "name": "Yengil avtomobillar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/3448/3448611.png",
-      "slug": "yengil-avtomobillar",
-      "parent": 8,
-      "lft": 2,
-      "rght": 5,
-      "tree_id": 2,
-      "level": 1
+      "name": "Klaviatura",
+      "slug": "klaviatura",
+      "icon": "categories/klaviatura.png",
+      "parent": 6,
+      "lft": 15,
+      "rght": 16,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 10,
     "fields": {
-      "name": "Elektromobillar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/3076/3076020.png",
-      "slug": "elektromobillar",
-      "parent": 9,
-      "lft": 3,
-      "rght": 4,
-      "tree_id": 2,
-      "level": 2
+      "name": "Maishiy texnika",
+      "slug": "maishiy-texnika",
+      "icon": "categories/maishiy.png",
+      "parent": 1,
+      "lft": 18,
+      "rght": 25,
+      "tree_id": 1,
+      "level": 1
     }
   },
   {
     "model": "products.category",
     "pk": 11,
     "fields": {
-      "name": "Og'ir texnika",
-      "icon": "https://cdn-icons-png.flaticon.com/512/3204/3204712.png",
-      "slug": "ogir-texnika",
-      "parent": 8,
-      "lft": 6,
-      "rght": 9,
-      "tree_id": 2,
-      "level": 1
+      "name": "Sovutkich",
+      "slug": "sovutkich",
+      "icon": "categories/sovutkich.png",
+      "parent": 10,
+      "lft": 19,
+      "rght": 20,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 12,
     "fields": {
-      "name": "Ekskavatorlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/4442/4442713.png",
-      "slug": "ekskavatorlar",
-      "parent": 11,
-      "lft": 7,
-      "rght": 8,
-      "tree_id": 2,
+      "name": "Kir yuvish mashinasi",
+      "slug": "kir-yuvish",
+      "icon": "categories/kir.png",
+      "parent": 10,
+      "lft": 21,
+      "rght": 22,
+      "tree_id": 1,
       "level": 2
     }
   },
@@ -172,98 +171,97 @@
     "model": "products.category",
     "pk": 13,
     "fields": {
-      "name": "Avto ehtiyot qismlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/2554/2554999.png",
-      "slug": "avto-ehtiyot-qismlar",
-      "parent": 8,
-      "lft": 10,
-      "rght": 13,
-      "tree_id": 2,
-      "level": 1
+      "name": "Pech",
+      "slug": "pech",
+      "icon": "categories/pech.png",
+      "parent": 10,
+      "lft": 23,
+      "rght": 24,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 14,
     "fields": {
-      "name": "Shinalar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/621/621768.png",
-      "slug": "shinalar",
-      "parent": 13,
-      "lft": 11,
-      "rght": 12,
-      "tree_id": 2,
-      "level": 2
+      "name": "Aqlli soatlar",
+      "slug": "aqlli-soatlar",
+      "icon": "categories/watch.png",
+      "parent": 1,
+      "lft": 26,
+      "rght": 31,
+      "tree_id": 1,
+      "level": 1
     }
   },
-
   {
     "model": "products.category",
     "pk": 15,
     "fields": {
-      "name": "Kiyim-kechak",
-      "icon": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
-      "slug": "kiyim-kechak",
-      "parent": null,
-      "lft": 1,
-      "rght": 14,
-      "tree_id": 3,
-      "level": 0
+      "name": "Apple Watch",
+      "slug": "apple-watch",
+      "icon": "categories/applewatch.png",
+      "parent": 14,
+      "lft": 27,
+      "rght": 28,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 16,
     "fields": {
-      "name": "Erkaklar kiyimlari",
-      "icon": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
-      "slug": "erkaklar-kiyimlari",
-      "parent": 15,
-      "lft": 2,
-      "rght": 5,
-      "tree_id": 3,
-      "level": 1
+      "name": "Samsung Watch",
+      "slug": "samsung-watch",
+      "icon": "categories/samsungwatch.png",
+      "parent": 14,
+      "lft": 29,
+      "rght": 30,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 17,
     "fields": {
-      "name": "Kostyumlar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/892/892699.png",
-      "slug": "kostyumlar",
-      "parent": 16,
-      "lft": 3,
-      "rght": 4,
-      "tree_id": 3,
-      "level": 2
+      "name": "Aksesuarlar",
+      "slug": "aksesuarlar",
+      "icon": "categories/aksesuar.png",
+      "parent": 1,
+      "lft": 32,
+      "rght": 39,
+      "tree_id": 1,
+      "level": 1
     }
   },
   {
     "model": "products.category",
     "pk": 18,
     "fields": {
-      "name": "Ayollar kiyimlari",
-      "icon": "https://cdn-icons-png.flaticon.com/512/892/892692.png",
-      "slug": "ayollar-kiyimlari",
-      "parent": 15,
-      "lft": 6,
-      "rght": 9,
-      "tree_id": 3,
-      "level": 1
+      "name": "Quloqchin",
+      "slug": "quloqchin",
+      "icon": "categories/quloqchin.png",
+      "parent": 17,
+      "lft": 33,
+      "rght": 34,
+      "tree_id": 1,
+      "level": 2
     }
   },
   {
     "model": "products.category",
     "pk": 19,
     "fields": {
-      "name": "Ko'ylaklar",
-      "icon": "https://cdn-icons-png.flaticon.com/512/892/892721.png",
-      "slug": "koylaklar",
-      "parent": 18,
-      "lft": 7,
-      "rght": 8,
-      "tree_id": 3,
+      "name": "Powerbank",
+      "slug": "powerbank",
+      "icon": "categories/powerbank.png",
+      "parent": 17,
+      "lft": 35,
+      "rght": 36,
+      "tree_id": 1,
       "level": 2
     }
   },
@@ -271,14 +269,14 @@
     "model": "products.category",
     "pk": 20,
     "fields": {
-      "name": "Bolalar kiyimlari",
-      "icon": "https://cdn-icons-png.flaticon.com/512/2615/2615185.png",
-      "slug": "bolalar-kiyimlari",
-      "parent": 15,
-      "lft": 10,
-      "rght": 13,
-      "tree_id": 3,
-      "level": 1
+      "name": "Kabellar",
+      "slug": "kabellar",
+      "icon": "categories/kabellar.png",
+      "parent": 17,
+      "lft": 37,
+      "rght": 38,
+      "tree_id": 1,
+      "level": 2
     }
   }
 ]

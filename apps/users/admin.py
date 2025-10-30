@@ -1,12 +1,10 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.auth.admin import UserAdmin
-
 from users.models import User
 
 
 @admin.register(User)
-# class UserModelAdmin(admin.ModelAdmin):
 class UserModelAdmin(UserAdmin):
     list_display = ('id', 'phone', 'email', 'is_active', 'is_staff')
     ordering = ('phone',)

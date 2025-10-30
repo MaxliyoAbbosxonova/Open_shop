@@ -1,6 +1,7 @@
 from django.contrib.postgres.fields import HStoreField
 from django.core.validators import FileExtensionValidator
-from django.db.models import Model, CASCADE, DecimalField, ForeignKey, ImageField, URLField
+from django.db.models import (CASCADE, DecimalField, ForeignKey, ImageField,
+                              Model, URLField)
 from django.db.models.fields import CharField, SlugField
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
@@ -12,7 +13,7 @@ from shared.models import CreatedBaseModel, UUIDBaseModel
 
 class Category(MPTTModel):
     name = CharField(max_length=255, verbose_name=_("Name"), )
-    icon = URLField(max_length=255, null=True, blank=True)
+    icon = ImageField(upload_to="categories/", null=True, blank=True)
     slug = SlugField(max_length=255, unique=True, editable=False)
     parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='subcategory')
 
@@ -41,7 +42,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     price = DecimalField(verbose_name=_("Price"), max_digits=10, decimal_places=2)
     image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
                        null=True, blank=True, verbose_name=_("Image"))
-    attributes = HStoreField(blank=True, null=True)
+    # attributes = HStoreField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -58,3 +59,15 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
+
+class ProductAttribute(Model):
+    product = ForeignKey(Product, on_delete=CASCADE, related_name="attributes")
+    key = CharField(max_length=100, verbose_name=_("Key"))
+    value = CharField(max_length=255, verbose_name=_("Value"))
+
+    def __str__(self):
+        return f"{self.key}: {self.value}"
+
+    class Meta:
+        verbose_name = _("Product Attribute")
+        verbose_name_plural = _("Product Attributes")

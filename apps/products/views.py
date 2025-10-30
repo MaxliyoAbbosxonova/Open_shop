@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-
-from products.models import Product, Category
-from products.serializers import ProductModelSerializer, CategoryModelSerializer
+from products.models import Category, Product
+from products.serializers import (CategoryModelSerializer,
+                                  ProductModelSerializer)
+from rest_framework.generics import (ListCreateAPIView,
+                                     RetrieveUpdateDestroyAPIView)
 
 
 class ProductListAPIView(ListCreateAPIView):

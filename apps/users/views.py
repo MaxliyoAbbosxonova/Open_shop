@@ -1,9 +1,8 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
-from users.utils import random_code, send_sms_code, check_sms_code
+from users.utils import check_sms_code, random_code, send_sms_code
 
 
 class SendCodeAPIView(APIView):

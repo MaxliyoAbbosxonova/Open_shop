@@ -1,13 +1,21 @@
 from django.contrib import admin
-from products.models import Category, Product
+from django.contrib.admin import TabularInline
+from products.models import Category, Product, ProductAttribute
 
 
 @admin.register(Category)
 class CategoryModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'parent')
+    list_display = ('id', 'name', 'parent', 'icon', 'slug')
+
+class ProductAttributeInline(TabularInline):
+    model = ProductAttribute
+    extra = 1
+    fields = ("key", "value")
+    verbose_name = "Attribute"
+    verbose_name_plural = "Attributes"
 
 
 @admin.register(Product)
 class ProductModelAdmin(admin.ModelAdmin):
-    # prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'slug', 'price', 'category')
+    inlines = (ProductAttributeInline,)

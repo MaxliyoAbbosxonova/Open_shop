@@ -11,8 +11,8 @@ sys.path.append(os.path.join(BASE_DIR, 'apps'))
 if not os.path.exists('/.dockerenv'):
     load_dotenv('env/.env')
 
-SECRET_KEY = 'django-insecure-djh$un+@qqb8jnw7ul3q48+m*m=-wkp^@i9*t++$#^qkexu)8_'
-DEBUG = True
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,7 +62,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
     },
+
+
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'

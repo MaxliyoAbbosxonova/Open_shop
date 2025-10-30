@@ -1,6 +1,6 @@
 import uuid
 
-from django.db.models import Model, Func, DateTimeField
+from django.db.models import DateTimeField, Func, Model
 from django.db.models.fields import UUIDField
 
 
