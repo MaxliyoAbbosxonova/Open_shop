@@ -2,8 +2,8 @@
 
 
 task
-1. debug, secret_key larni .env ga chiqarish            Done
-2. django hstore adminkada qosha olish (attribute)      Done
+1. debug, secret_key larni .env ga chiqarish            Done +
+2. django hstore adminkada qosha olish (attribute)      Done +
 3. adminkada detail page da rasm chiqib tursin
 4.
 {
@@ -26,14 +26,15 @@ task
     }
 }
 
-5. flake8, isort  -                                       Done
-6. category iconni imagefield qilish                      Done
+5. flake8, isort  -
+6. category iconni imagefield qilish                      Done +
 7. slugni saytdagidek qilish
 https://openshop.uz/shop/subcategory/203-foto-va-video-texnika
+https://openshop.uz/shop/product/100664-o-yin-kreslosi-cougar-defensor
 
 
 api/v1/products/?category=203-foto-va-video-texnika
 
-8. list va detailga alohida serializer yozamiz (product)  Done
+8. list va detailga alohida serializer yozamiz (product)
 
 
