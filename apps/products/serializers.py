@@ -5,7 +5,15 @@ from rest_framework.serializers import ModelSerializer
 class ProductModelSerializer(ModelSerializer):
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('name', 'description', 'price', 'image','slug')
+
+class ProductDetailModelSerializer(ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id', 'name', 'price', 'image','slug','description','category')
+
+
+
 
 class CategoryModelSerializer(ModelSerializer):
     class Meta:
