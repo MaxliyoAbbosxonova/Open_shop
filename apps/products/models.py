@@ -52,6 +52,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(f"{self.id}-{self.name}")
+            print(self.slug)
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -59,6 +60,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
 
     def get_absolute_url(self):
         from django.urls import reverse
+        print(self.slug)
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
 
     class Meta:
