@@ -18,3 +18,9 @@ dependencies = [
     "django-jazzmin>=3.0.1",
     "flake8>=7.3.0",
 ]
+
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip = ".tox, .venv, venv, migrations"
