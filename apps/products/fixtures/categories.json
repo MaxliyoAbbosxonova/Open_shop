@@ -3,12 +3,11 @@
     "model": "products.category",
     "pk": 1,
     "fields": {
-      "name": "Texnika",
-      "slug": "texnika",
-      "icon": "categories/texnika.png",
+      "name": "Elektronika",
+      "slug": "elektronika",
       "parent": null,
       "lft": 1,
-      "rght": 40,
+      "rght": 12,
       "tree_id": 1,
       "level": 0
     }
@@ -17,12 +16,11 @@
     "model": "products.category",
     "pk": 2,
     "fields": {
-      "name": "Telefon",
-      "slug": "telefon",
-      "icon": "categories/telefon.png",
+      "name": "Kompyuterlar",
+      "slug": "kompyuterlar",
       "parent": 1,
       "lft": 2,
-      "rght": 9,
+      "rght": 5,
       "tree_id": 1,
       "level": 1
     }
@@ -31,9 +29,8 @@
     "model": "products.category",
     "pk": 3,
     "fields": {
-      "name": "Samsung",
-      "slug": "samsung",
-      "icon": "categories/samsung.png",
+      "name": "Noutbuklar",
+      "slug": "noutbuklar",
       "parent": 2,
       "lft": 3,
       "rght": 4,
@@ -45,26 +42,24 @@
     "model": "products.category",
     "pk": 4,
     "fields": {
-      "name": "Apple",
-      "slug": "apple",
-      "icon": "categories/apple.png",
-      "parent": 2,
-      "lft": 5,
-      "rght": 6,
+      "name": "Telefonlar",
+      "slug": "telefonlar",
+      "parent": 1,
+      "lft": 6,
+      "rght": 11,
       "tree_id": 1,
-      "level": 2
+      "level": 1
     }
   },
   {
     "model": "products.category",
     "pk": 5,
     "fields": {
-      "name": "Xiaomi",
-      "slug": "xiaomi",
-      "icon": "categories/xiaomi.png",
-      "parent": 2,
+      "name": "Smartfonlar",
+      "slug": "smartfonlar",
+      "parent": 4,
       "lft": 7,
-      "rght": 8,
+      "rght": 10,
       "tree_id": 1,
       "level": 2
     }
@@ -73,209 +68,51 @@
     "model": "products.category",
     "pk": 6,
     "fields": {
-      "name": "Kompyuter",
-      "slug": "kompyuter",
-      "icon": "categories/kompyuter.png",
-      "parent": 1,
-      "lft": 10,
-      "rght": 17,
+      "name": "Android telefonlar",
+      "slug": "android-telefonlar",
+      "parent": 5,
+      "lft": 8,
+      "rght": 9,
       "tree_id": 1,
-      "level": 1
+      "level": 3
     }
   },
   {
     "model": "products.category",
     "pk": 7,
     "fields": {
-      "name": "Noutbuk",
-      "slug": "noutbuk",
-      "icon": "categories/noutbuk.png",
-      "parent": 6,
-      "lft": 11,
-      "rght": 12,
-      "tree_id": 1,
-      "level": 2
+      "name": "Maishiy texnika",
+      "slug": "maishiy-texnika",
+      "parent": null,
+      "lft": 13,
+      "rght": 18,
+      "tree_id": 2,
+      "level": 0
     }
   },
   {
     "model": "products.category",
     "pk": 8,
     "fields": {
-      "name": "Monitor",
-      "slug": "monitor",
-      "icon": "categories/monitor.png",
-      "parent": 6,
-      "lft": 13,
-      "rght": 14,
-      "tree_id": 1,
-      "level": 2
+      "name": "Kir yuvish mashinalari",
+      "slug": "kir-yuvish-mashinalari",
+      "parent": 7,
+      "lft": 14,
+      "rght": 17,
+      "tree_id": 2,
+      "level": 1
     }
   },
   {
     "model": "products.category",
     "pk": 9,
     "fields": {
-      "name": "Klaviatura",
-      "slug": "klaviatura",
-      "icon": "categories/klaviatura.png",
-      "parent": 6,
+      "name": "Avtomatik mashinalar",
+      "slug": "avtomatik-mashinalar",
+      "parent": 8,
       "lft": 15,
       "rght": 16,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 10,
-    "fields": {
-      "name": "Maishiy texnika",
-      "slug": "maishiy-texnika",
-      "icon": "categories/maishiy.png",
-      "parent": 1,
-      "lft": 18,
-      "rght": 25,
-      "tree_id": 1,
-      "level": 1
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 11,
-    "fields": {
-      "name": "Sovutkich",
-      "slug": "sovutkich",
-      "icon": "categories/sovutkich.png",
-      "parent": 10,
-      "lft": 19,
-      "rght": 20,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 12,
-    "fields": {
-      "name": "Kir yuvish mashinasi",
-      "slug": "kir-yuvish",
-      "icon": "categories/kir.png",
-      "parent": 10,
-      "lft": 21,
-      "rght": 22,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 13,
-    "fields": {
-      "name": "Pech",
-      "slug": "pech",
-      "icon": "categories/pech.png",
-      "parent": 10,
-      "lft": 23,
-      "rght": 24,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 14,
-    "fields": {
-      "name": "Aqlli soatlar",
-      "slug": "aqlli-soatlar",
-      "icon": "categories/watch.png",
-      "parent": 1,
-      "lft": 26,
-      "rght": 31,
-      "tree_id": 1,
-      "level": 1
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 15,
-    "fields": {
-      "name": "Apple Watch",
-      "slug": "apple-watch",
-      "icon": "categories/applewatch.png",
-      "parent": 14,
-      "lft": 27,
-      "rght": 28,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 16,
-    "fields": {
-      "name": "Samsung Watch",
-      "slug": "samsung-watch",
-      "icon": "categories/samsungwatch.png",
-      "parent": 14,
-      "lft": 29,
-      "rght": 30,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 17,
-    "fields": {
-      "name": "Aksesuarlar",
-      "slug": "aksesuarlar",
-      "icon": "categories/aksesuar.png",
-      "parent": 1,
-      "lft": 32,
-      "rght": 39,
-      "tree_id": 1,
-      "level": 1
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 18,
-    "fields": {
-      "name": "Quloqchin",
-      "slug": "quloqchin",
-      "icon": "categories/quloqchin.png",
-      "parent": 17,
-      "lft": 33,
-      "rght": 34,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 19,
-    "fields": {
-      "name": "Powerbank",
-      "slug": "powerbank",
-      "icon": "categories/powerbank.png",
-      "parent": 17,
-      "lft": 35,
-      "rght": 36,
-      "tree_id": 1,
-      "level": 2
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 20,
-    "fields": {
-      "name": "Kabellar",
-      "slug": "kabellar",
-      "icon": "categories/kabellar.png",
-      "parent": 17,
-      "lft": 37,
-      "rght": 38,
-      "tree_id": 1,
+      "tree_id": 2,
       "level": 2
     }
   }

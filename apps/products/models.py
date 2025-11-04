@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
+
 from shared.models import CreatedBaseModel, SlugBaseModel, UUIDBaseModel
 
 
@@ -38,7 +39,7 @@ class Product(CreatedBaseModel, SlugBaseModel):
 
 
 class ProductAttribute(Model):
-    product = ForeignKey(Product, on_delete=CASCADE, related_name="attributes")
+    product = ForeignKey(Product, CASCADE, related_name="attributes")
     key = CharField(max_length=100, verbose_name=_("Key"))
     value = CharField(max_length=255, verbose_name=_("Value"))
 
