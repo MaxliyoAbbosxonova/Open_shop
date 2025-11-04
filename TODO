@@ -6,8 +6,7 @@ task
 2. django hstore adminkada qosha olish (attribute)      Done +
 3. adminkada detail page da rasm chiqib tursin          Done
 4.
-{
-    "id": 2,
+{   "id": 2,
     "name": "Samsung",
     "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
     "slug": "samsung",
@@ -31,8 +30,6 @@ task
 7. slugni saytdagidek qilish
 https://openshop.uz/shop/subcategory/203-foto-va-video-texnika
 https://openshop.uz/shop/product/100664-o-yin-kreslosi-cougar-defensor
-
-
 api/v1/products/?category=203-foto-va-video-texnika
 
 8. list va detailga alohida serializer yozamiz (product)   Done

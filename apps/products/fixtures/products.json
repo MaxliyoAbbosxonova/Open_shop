@@ -3,285 +3,147 @@
     "model": "products.product",
     "pk": 1,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Samsung Galaxy S24",
-      "slug": "samsung-galaxy-s24",
-      "category": "samsung",
-      "description": "Yangi avlod Samsung Galaxy S24 AMOLED displey va kuchli protsessor bilan jihozlangan.",
-      "price": "999.99",
-      "image": "products/2025/10/27/samsung_s24.png",
-      "attributes": {
-        "xotira": "256GB",
-        "rang": "qora",
-        "ekran": "6.2 inch"
-      }
+      "name": "MacBook Air M2",
+      "slug": "1-macbook-air-m2",
+      "category": "noutbuklar",
+      "description": "<p>Apple kompaniyasining eng yengil noutbuki — 8 yadroli CPU va 10 yadroli GPU bilan.</p>",
+      "price": "1450.00",
+      "image": "products/2025/11/04/macbook-air-m2.jpg",
+      "created_at": "2025-11-04T09:00:00Z",
+      "updated_at": "2025-11-04T09:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 2,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "iPhone 15 Pro",
-      "slug": "iphone-15-pro",
-      "category": "apple",
-      "description": "Titan korpusli yangi iPhone 15 Pro kuchli A17 chip bilan.",
-      "price": "1299.99",
-      "image": "products/2025/10/27/iphone_15_pro.png",
-      "attributes": {
-        "xotira": "512GB",
-        "rang": "kumush",
-        "ekran": "6.1 inch"
-      }
+      "name": "HP Pavilion 15",
+      "slug": "2-hp-pavilion-15",
+      "category": "noutbuklar",
+      "description": "<p>Intel i7 13-avlod protsessori bilan, 16GB RAM, 512GB SSD.</p>",
+      "price": "950.00",
+      "image": "products/2025/11/04/hp-pavilion-15.jpg",
+      "created_at": "2025-11-04T09:05:00Z",
+      "updated_at": "2025-11-04T09:05:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 3,
     "fields": {
-       "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Xiaomi 14 Ultra",
-      "slug": "xiaomi-14-ultra",
-      "category": "xiaomi",
-      "description": "Xiaomi 14 Ultra — professional kamera tizimi va Snapdragon 8 Gen 3 bilan.",
-      "price": "899.99",
-      "image": "products/2025/10/27/xiaomi_14_ultra.png",
-      "attributes": {
-        "xotira": "256GB",
-        "rang": "ko‘k",
-        "kamera": "200MP"
-      }
+      "name": "Samsung Galaxy S24 Ultra",
+      "slug": "3-samsung-galaxy-s24-ultra",
+      "category": "android-telefonlar",
+      "description": "<p>200MP kamera, Snapdragon 8 Gen 3, 120Hz AMOLED ekran.</p>",
+      "price": "1200.00",
+      "image": "products/2025/11/04/samsung-s24-ultra.jpg",
+      "created_at": "2025-11-04T09:10:00Z",
+      "updated_at": "2025-11-04T09:10:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 4,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "ASUS ZenBook 15",
-      "slug": "asus-zenbook-15",
-      "category": "noutbuk",
-      "description": "Yengil, kuchli va batareya muddati uzoq bo‘lgan noutbuk.",
-      "price": "1499.99",
-      "image": "products/2025/10/27/asus_zenbook_15.png",
-      "attributes": {
-        "RAM": "16GB",
-        "SSD": "512GB",
-        "ekran": "15.6 inch"
-      }
+      "name": "iPhone 15 Pro Max",
+      "slug": "4-iphone-15-pro-max",
+      "category": "smartfonlar",
+      "description": "<p>Titanium korpusli flagman — A17 Pro chip, 5x kamera zum bilan.</p>",
+      "price": "1600.00",
+      "image": "products/2025/11/04/iphone-15-pro-max.jpg",
+      "created_at": "2025-11-04T09:15:00Z",
+      "updated_at": "2025-11-04T09:15:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 5,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "HP Pavilion 14",
-      "slug": "hp-pavilion-14",
-      "category": "noutbuk",
-      "description": "Ish va o‘qish uchun qulay noutbuk, kuchli Intel Core i5 bilan.",
-      "price": "999.00",
-      "image": "products/2025/10/27/hp_pavilion_14.png",
-      "attributes": {
-        "RAM": "8GB",
-        "SSD": "256GB",
-        "OS": "Windows 11"
-      }
+      "name": "Samsung WW90T604",
+      "slug": "5-samsung-ww90t604",
+      "category": "kir-yuvish-mashinalari",
+      "description": "<p>9 kg sig‘im, EcoBubble texnologiyasi va Wi-Fi boshqaruvi.</p>",
+      "price": "650.00",
+      "image": "products/2025/11/04/samsung-ww90t604.jpg",
+      "created_at": "2025-11-04T09:20:00Z",
+      "updated_at": "2025-11-04T09:20:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 6,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Dell UltraSharp Monitor 27\"",
-      "slug": "dell-ultrasharp-27",
-      "category": "monitor",
-      "description": "Ultra HD 4K monitor, grafik dizayn va o‘yin uchun ideal.",
-      "price": "699.99",
-      "image": "products/2025/10/27/dell_ultrasharp.png",
-      "attributes": {
-        "o‘lcham": "27 inch",
-        "rezolyutsiya": "4K UHD",
-        "panel": "IPS"
-      }
+      "name": "LG Direct Drive",
+      "slug": "6-lg-direct-drive",
+      "category": "avtomatik-mashinalar",
+      "description": "<p>Energiya tejamkor, inverter motorli kir yuvish mashinasi.</p>",
+      "price": "700.00",
+      "image": "products/2025/11/04/lg-direct-drive.jpg",
+      "created_at": "2025-11-04T09:25:00Z",
+      "updated_at": "2025-11-04T09:25:00Z"
     }
   },
   {
-    "model": "products.product",
+    "model": "products.productattribute",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "key": "RAM",
+      "value": "16GB"
+    }
+  },
+  {
+    "model": "products.productattribute",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "key": "SSD",
+      "value": "512GB"
+    }
+  },
+  {
+    "model": "products.productattribute",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "key": "Display",
+      "value": "15.6 inch Full HD"
+    }
+  },
+  {
+    "model": "products.productattribute",
+    "pk": 4,
+    "fields": {
+      "product": 3,
+      "key": "Kamera",
+      "value": "200MP"
+    }
+  },
+  {
+    "model": "products.productattribute",
+    "pk": 5,
+    "fields": {
+      "product": 4,
+      "key": "Chip",
+      "value": "A17 Pro"
+    }
+  },
+  {
+    "model": "products.productattribute",
+    "pk": 6,
+    "fields": {
+      "product": 5,
+      "key": "Sig‘im",
+      "value": "9 kg"
+    }
+  },
+  {
+    "model": "products.productattribute",
     "pk": 7,
     "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Logitech MX Keys",
-      "slug": "logitech-mx-keys",
-      "category": "klaviatura",
-      "description": "Professional simsiz klaviatura, qulay yozuv uchun ishlab chiqilgan.",
-      "price": "149.99",
-      "image": "products/2025/10/27/mx_keys.png",
-      "attributes": {
-        "turi": "simsiz",
-        "yoritish": "ha",
-        "til": "EN"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 8,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "LG NoFrost Sovutkich",
-      "slug": "lg-nofrost-sovutkich",
-      "category": "sovutkich",
-      "description": "Energiya tejamkor va jim ishlaydigan zamonaviy sovutkich.",
-      "price": "1199.00",
-      "image": "products/2025/10/27/lg_nofrost.png",
-      "attributes": {
-        "sig‘imi": "400L",
-        "energiya_sarfi": "A++",
-        "rang": "oq"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 9,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Bosch Kir yuvish mashinasi",
-      "slug": "bosch-kir-yuvish",
-      "category": "kir-yuvish",
-      "description": "Avtomatik kir yuvish mashinasi, bug‘li tozalash funksiyasi bilan.",
-      "price": "799.00",
-      "image": "products/2025/10/27/bosch_kir.png",
-      "attributes": {
-        "sig‘imi": "8kg",
-        "tezlik": "1200 rpm",
-        "energiya": "A+++"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 10,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Samsung Mikropech",
-      "slug": "samsung-pech",
-      "category": "pech",
-      "description": "Ko‘p funksiyali mikroto‘lqinli pech, avtomatik pishirish dasturlari bilan.",
-      "price": "399.99",
-      "image": "products/2025/10/27/samsung_pech.png",
-      "attributes": {
-        "quvvat": "900W",
-        "sig‘imi": "30L",
-        "rang": "qora"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 11,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Apple Watch Ultra 2",
-      "slug": "apple-watch-ultra-2",
-      "category": "apple-watch",
-      "description": "Professional sportchilar uchun mo‘ljallangan aqlli soat.",
-      "price": "799.99",
-      "image": "products/2025/10/27/apple_watch_ultra_2.png",
-      "attributes": {
-        "batareya": "36 soat",
-        "suv_o‘tkazmaslik": "ha",
-        "GPS": "ha"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 12,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Samsung Galaxy Watch 6",
-      "slug": "samsung-watch-6",
-      "category": "samsung-watch",
-      "description": "Sog‘liqni nazorat qilish sensorlari va AMOLED displey bilan aqlli soat.",
-      "price": "499.99",
-      "image": "products/2025/10/27/samsung_watch_6.png",
-      "attributes": {
-        "batareya": "24 soat",
-        "monitoring": "yurak urishi",
-        "suv_o‘tkazmaslik": "ha"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 13,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Sony WH-1000XM5",
-      "slug": "sony-wh-1000xm5",
-      "category": "quloqchin",
-      "description": "Premium simsiz quloqchin, shovqinni to‘liq pasaytiruvchi tizim bilan.",
-      "price": "599.99",
-      "image": "products/2025/10/27/sony_xm5.png",
-      "attributes": {
-        "turi": "Bluetooth",
-        "shovqin_bekor": "ha",
-        "zaryad": "30 soat"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 14,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Anker PowerCore 20000",
-      "slug": "anker-powercore-20000",
-      "category": "powerbank",
-      "description": "20000 mAh sig‘imli kuchli va ixcham powerbank.",
-      "price": "69.99",
-      "image": "products/2025/10/27/anker_powercore.png",
-      "attributes": {
-        "sig‘imi": "20000mAh",
-        "port": "USB-C",
-        "tez_zaryad": "ha"
-      }
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 15,
-    "fields": {
-      "created_at": "2025-10-24T10:00:00Z",
-      "updated_at": "2025-10-24T10:00:00Z",
-      "name": "Baseus Type-C Kabel 1m",
-      "slug": "baseus-typec-1m",
-      "category": "kabellar",
-      "description": "Tez zaryadlashni qo‘llovchi mustahkam USB Type-C kabel.",
-      "price": "12.99",
-      "image": "products/2025/10/27/baseus_typec.png",
-      "attributes": {
-        "uzunlik": "1m",
-        "turi": "Type-C",
-        "tez_zaryad": "ha"
-      }
+      "product": 6,
+      "key": "Motor turi",
+      "value": "Inverter Direct Drive"
     }
   }
 ]

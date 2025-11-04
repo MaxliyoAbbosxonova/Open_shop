@@ -38,7 +38,7 @@ class SlugBaseModel(Model):
         abstract = True
 
 
-class CreatedBaseModel(UUIDBaseModel):
+class CreatedBaseModel(Model):
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
 
