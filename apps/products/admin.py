@@ -1,11 +1,14 @@
 from django.contrib import admin
-from django.contrib.admin import TabularInline
+from django.contrib.admin import TabularInline, ModelAdmin
+from django.utils.safestring import mark_safe
+
 from products.models import Category, Product, ProductAttribute
 
 
 @admin.register(Category)
-class CategoryModelAdmin(admin.ModelAdmin):
+class CategoryModelAdmin(ModelAdmin):
     list_display = ('id', 'name', 'parent', 'icon', 'slug')
+
 
 class ProductAttributeInline(TabularInline):
     model = ProductAttribute
@@ -19,3 +22,5 @@ class ProductAttributeInline(TabularInline):
 class ProductModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'price', 'category')
     inlines = (ProductAttributeInline,)
+    readonly_fields = ['image_tag',]
+

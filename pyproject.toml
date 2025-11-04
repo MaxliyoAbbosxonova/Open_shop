@@ -14,7 +14,7 @@ dependencies = [
     "faker>=37.11.0",
     "pillow>=11.3.0",
     "psycopg2-binary>=2.9.11",
-    "flake8-django>=1.4",
     "isort>=7.0.0",
     "django-jazzmin>=3.0.1",
+    "flake8>=7.3.0",
 ]

@@ -65,7 +65,6 @@ TEMPLATES = [
 
     },
 
-
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
@@ -152,7 +151,6 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS
 }
-
 
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',

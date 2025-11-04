@@ -1,13 +1,14 @@
-from django.contrib.postgres.fields import HStoreField
 from django.core.validators import FileExtensionValidator
 from django.db.models import (CASCADE, DecimalField, ForeignKey, ImageField,
-                              Model, URLField)
+                              Model)
 from django.db.models.fields import CharField, SlugField
+from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
+
 from shared.models import CreatedBaseModel, UUIDBaseModel
 
 
@@ -19,7 +20,7 @@ class Category(MPTTModel):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = slugify(f"{self.id}+'-'=f{self.name}")
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -42,11 +43,15 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     price = DecimalField(verbose_name=_("Price"), max_digits=10, decimal_places=2)
     image = ImageField(upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
                        null=True, blank=True, verbose_name=_("Image"))
-    # attributes = HStoreField(blank=True, null=True)
+
+    def image_tag(self):
+        return mark_safe('<img src="/directory/%s" width="150" height="150" />' % (self.image.url))
+
+    image_tag.short_description = ''
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = slugify(f"{self.id}-{self.name}")
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -59,6 +64,7 @@ class Product(CreatedBaseModel, UUIDBaseModel):
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
+
 
 class ProductAttribute(Model):
     product = ForeignKey(Product, on_delete=CASCADE, related_name="attributes")
