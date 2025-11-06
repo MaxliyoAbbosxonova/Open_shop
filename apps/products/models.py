@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
-
 from shared.models import CreatedBaseModel, SlugBaseModel, UUIDBaseModel
 
 

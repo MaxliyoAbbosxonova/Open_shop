@@ -1,7 +1,6 @@
-from rest_framework.serializers import ModelSerializer, ListSerializer
 from products.fields import RecursiveField
-from products.models import Category, Product, Highlight
-
+from products.models import Category, Highlight, Product
+from rest_framework.serializers import ListSerializer, ModelSerializer
 
 
 class CategoryModelSerializer(ModelSerializer):

@@ -1,13 +1,13 @@
-from rest_framework.views import APIView
-
-from products.models import Category, Product, Highlight
+from products.models import Category, Highlight, Product
 from products.serializers import (
     CategoryModelSerializer,
+    HighlightModelSerializer,
     ProductDetailModelSerializer,
-    ProductModelSerializer, HighlightModelSerializer,
+    ProductModelSerializer,
 )
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny
+from rest_framework.views import APIView
 
 
 class ProductListAPIView(ListCreateAPIView):

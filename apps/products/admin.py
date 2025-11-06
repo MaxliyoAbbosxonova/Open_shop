@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
 from django.utils.safestring import mark_safe
-
-from products.models import Category, Product, ProductAttribute, Highlight
+from products.models import Category, Highlight, Product, ProductAttribute
 
 
 @admin.register(Highlight)
