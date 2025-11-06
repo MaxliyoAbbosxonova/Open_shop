@@ -2,7 +2,12 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
 from django.utils.safestring import mark_safe
 
-from products.models import Category, Product, ProductAttribute
+from products.models import Category, Product, ProductAttribute, Highlight
+
+
+@admin.register(Highlight)
+class HighlightModelAdmin(ModelAdmin):
+    list_display = ('id', 'name', 'created_at')
 
 
 @admin.register(Category)
@@ -18,12 +23,15 @@ class ProductAttributeInline(TabularInline):
     verbose_name_plural = "Attributes"
 
 
+
 @admin.register(Product)
-class ProductModelAdmin(admin.ModelAdmin):
+class ProductModelAdmin(ModelAdmin):
     list_display = ('id', 'name', 'slug', 'price', 'category')
     inlines = (ProductAttributeInline,)
     readonly_fields = ['image_tag', ]
 
+
     @admin.display(description="Product Image")
     def image_tag(self, obj: Product):
         return mark_safe(f'<img src="{obj.image.url}" width="150" height="150" />')
+

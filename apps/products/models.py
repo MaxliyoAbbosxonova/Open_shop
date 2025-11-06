@@ -1,6 +1,6 @@
 from django.core.validators import FileExtensionValidator
 from django.db.models import CASCADE, DecimalField, ForeignKey, ImageField, Model
-from django.db.models.fields import CharField
+from django.db.models.fields import CharField, IntegerField
 from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
@@ -11,7 +11,10 @@ from shared.models import CreatedBaseModel, SlugBaseModel, UUIDBaseModel
 
 class Category(MPTTModel, SlugBaseModel):
     icon = ImageField(upload_to="categories/", null=True, blank=True)
-    parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='subcategory')
+    parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='children')
+    order_number=IntegerField(null=True, blank=True)
+    
+
 
     class MPTTMeta:
         order_insertion_by = ['name']
@@ -38,9 +41,10 @@ class Product(CreatedBaseModel, SlugBaseModel):
         verbose_name_plural = _('Products')
 
 
+
 class ProductAttribute(Model):
     product = ForeignKey(Product, CASCADE, related_name="attributes")
-    key = CharField(max_length=100, verbose_name=_("Key"))
+    key = CharField(max_length=255, verbose_name=_("Key"))
     value = CharField(max_length=255, verbose_name=_("Value"))
 
     def __str__(self):
@@ -49,3 +53,17 @@ class ProductAttribute(Model):
     class Meta:
         verbose_name = _("Product Attribute")
         verbose_name_plural = _("Product Attributes")
+
+
+class Highlight(CreatedBaseModel):
+    name=CharField(max_length=255, verbose_name=_("Name"))
+    image=ImageField(upload_to='products/%Y/%m/%d', null=True, blank=True)
+    # width=IntegerField(null=True, blank=True,default=1097)
+    # height=IntegerField(null=True, blank=True,default=219)
+
+    def __str__(self):
+        return f"Advertising: {self.id}"
+
+
+
+

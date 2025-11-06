@@ -33,8 +33,11 @@ https://openshop.uz/shop/product/100664-o-yin-kreslosi-cougar-defensor
 api/v1/products/?category=203-foto-va-video-texnika
 
 8. list va detailga alohida serializer yozamiz (product)   Done
+
+
 9. api/v1/part/slider slider nomli model va apisini yozish
 10. category ga products_count va order_number qoshilsin
-11.
+
+
 
 
