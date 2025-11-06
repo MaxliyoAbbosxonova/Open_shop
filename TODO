@@ -5,8 +5,9 @@ task
 1. debug, secret_key larni .env ga chiqarish            Done +
 2. django hstore adminkada qosha olish (attribute)      Done +
 3. adminkada detail page da rasm chiqib tursin          Done +
-4.
-{   "id": 2,
+4. category bu
+{
+    "id": 2,
     "name": "Samsung",
     "icon": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
     "slug": "samsung",
