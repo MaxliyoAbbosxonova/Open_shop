@@ -48,8 +48,8 @@ api/v1/products/?category=203-foto-va-video-texnika
    category detail olib tashlaymiz [chunki category detail qilinmaydi ]
 
 9. api/v1/part/slider slider nomli model va apisini yozish
-10. category ga products_count va order_number qoshilsin       Done+
+10. category ga products_count qoshilsin
 11. Categories va products ga pagination qo'shildi             Done
-
-
-
+12. sms qayta yuborishda, vaqtini chiqarib qoydim (agar 1minut bolmagan bolsa)
+13. product listda order by qoshish (-narxi, -created_at)
+14. order apisini chiqarish (address, phone, payment_type)

@@ -11,7 +11,6 @@ from shared.models import CreatedBaseModel, SlugBaseModel
 class Category(MPTTModel, SlugBaseModel):
     icon = ImageField(upload_to="categories/", null=True, blank=True)
     parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='children')
-    order_number = IntegerField(null=True, blank=True)
 
     class MPTTMeta:
         order_insertion_by = ['name']
@@ -26,7 +25,8 @@ class Product(CreatedBaseModel, SlugBaseModel):
                           verbose_name=_("Category"))
     description = CKEditor5Field(verbose_name=_("Description"), blank=False, null=False)
     price = DecimalField(_("Price"), max_digits=10, decimal_places=2)
-    image = ImageField(_("Image"),upload_to='products/%Y/%m/%d', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
+    image = ImageField(_("Image"), upload_to='products/%Y/%m/%d',
+                       validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])],
                        null=True, blank=True)
 
     def get_absolute_url(self):
@@ -40,8 +40,8 @@ class Product(CreatedBaseModel, SlugBaseModel):
 
 class ProductAttribute(Model):
     product = ForeignKey(Product, CASCADE, related_name="attributes")
-    key = CharField( _("Key"),max_length=255)
-    value = CharField(_("Value"),max_length=255)
+    key = CharField(_("Key"), max_length=255)
+    value = CharField(_("Value"), max_length=255)
 
     def __str__(self):
         return f"{self.key}: {self.value}"
@@ -52,7 +52,7 @@ class ProductAttribute(Model):
 
 
 class Highlight(CreatedBaseModel):
-    name = CharField(_("Name"),max_length=255, )
+    name = CharField(_("Name"), max_length=255, )
     image = ImageField(upload_to='products/%Y/%m/%d', null=True, blank=True)
 
     def __str__(self):
@@ -64,22 +64,21 @@ class Cart(CreatedBaseModel):
 
 
 class CartItem(CreatedBaseModel):
-    products=ForeignKey('products.Product', CASCADE, verbose_name=_("Products"))
-    quantity = IntegerField(_("Quantity"),default=1)
-    cart=ForeignKey(Cart, CASCADE, verbose_name=_("Cart"))
+    products = ForeignKey('products.Product', CASCADE, verbose_name=_("Products"))
+    quantity = IntegerField(_("Quantity"), default=1)
+    cart = ForeignKey(Cart, CASCADE, verbose_name=_("Cart"))
 
     class Meta:
         verbose_name = _("CartItem")
         verbose_name_plural = _("CartItems")
 
+
 class Order(CreatedBaseModel):
     class Status(TextChoices):
-        IN_PROGRESS = _("in_progress"),_("In Progress")
-        COMPLETED = _("completed"), _("Completed")
-        CANCELLED = _("canceled"), _("Canceled")
+        IN_PROGRESS = "in_progress", _("In Progress")
+        COMPLETED = "completed", _("Completed")
+        CANCELLED = "canceled", _("Canceled")
 
-    status=CharField(_("Status"),max_length=15,choices=Status.choices, default=Status.IN_PROGRESS )
-    user=ForeignKey('users.User', CASCADE, verbose_name=_("User"))
-    total_amount=DecimalField(_("Total"), max_digits=10, decimal_places=2)
-
-
+    status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
+    user = ForeignKey('users.User', CASCADE, verbose_name=_("User"))
+    total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
