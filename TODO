@@ -4,8 +4,12 @@
 task
 1. debug, secret_key larni .env ga chiqarish            Done +
 2. django hstore adminkada qosha olish (attribute)      Done +
+[Bu unchalik kerak bo'lmadi HStore kutubxonasi eskiligi tufayli boshqa usul bilan yechim qildik ] key  -  value
+{Tabular inline}
 3. adminkada detail page da rasm chiqib tursin          Done +
-4. category bu
+[Biz bu haqdagi ma'lumotlarni google orali toptik {django admin image}  va albatta uni faqatgina admin.py ga kiritdik
+negaki enag kerakli yozish mukun bo'lgan joy o'sha edi ]
+4. category bu     -  django-recursive and Mptt - icnma ich kategoriyalar uchun     Done+
 {
     "id": 2,
     "name": "Samsung",
@@ -26,19 +30,22 @@ task
     }
 }
 
-5. flake8, isort                                          Done
+5. flake8, isort                                          Done+
+[ flake8 -> tox.ini , isort -> pyproject.toml ning configuration  uchun muhum ]
 6. category iconni imagefield qilish                      Done +
+
 7. slugni saytdagidek qilish                              Done +
+[men o'ylagandek qiyin emas ekan slug shunchaki yaratilishi kerak huddi matn bo'lib ]
 https://openshop.uz/shop/subcategory/203-foto-va-video-texnika
 https://openshop.uz/shop/product/100664-o-yin-kreslosi-cougar-defensor
 api/v1/products/?category=203-foto-va-video-texnika
 
-8. list va detailga alohida serializer yozamiz (product)   Done
-
+8. list va detailga alohida serializer yozamiz (product)                Done+
+   category detail olib tashlaymiz [chunki category detail qilinmaydi ]
 
 9. api/v1/part/slider slider nomli model va apisini yozish
-10. category ga products_count va order_number qoshilsin
-
-
+10. category ga products_count va order_number qoshilsin       Done+
+11. Categories va products ga pagination qo'shildi             Done
+12. cart , order ,
 
 

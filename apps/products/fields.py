@@ -125,5 +125,3 @@ class RecursiveField(Field):
                 pass
 
         return object.__getattribute__(self, name)
-
-

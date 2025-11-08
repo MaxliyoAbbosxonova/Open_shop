@@ -32,6 +32,10 @@ class SendSmsCodeSerializer(ModelSerializer):
 
         return super().validate(attrs)
 
+    class Meta:
+        model = User
+        fields = ['phone']
+
 
 class VerifySmsCodeSerializer(Serializer):
     phone = CharField(default='933977090')
@@ -77,5 +81,3 @@ class VerifySmsCodeSerializer(Serializer):
     @classmethod
     def get_token(cls, user) -> Token:
         return cls.token_class.for_user(user)
-
-

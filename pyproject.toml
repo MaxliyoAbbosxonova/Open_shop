@@ -17,6 +17,7 @@ dependencies = [
     "isort>=7.0.0",
     "django-jazzmin>=3.0.1",
     "flake8>=7.3.0",
+    "redis>=7.0.1",
 ]
 
 

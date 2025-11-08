@@ -6,7 +6,7 @@ from users.utils import check_sms_code, random_code, send_sms_code
 
 
 class SendCodeAPIView(APIView):
-    serializers_class = SendSmsCodeSerializer
+    serializer_class = SendSmsCodeSerializer
 
     def post(self, request):
         serializer = SendSmsCodeSerializer(data=request.data)
@@ -29,4 +29,4 @@ class LoginAPIView(APIView):
         if not is_valid_code:
             return Response({"message": "invalid code"}, status.HTTP_400_BAD_REQUEST)
 
-        return Response(serializer.get_data)
+        return Response(serializer.data)
