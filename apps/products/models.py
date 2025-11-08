@@ -79,8 +79,7 @@ class Order(CreatedBaseModel):
         CANCELLED = _("canceled"), _("Canceled")
 
     status=CharField(_("Status"),max_length=15,choices=Status.choices, default=Status.IN_PROGRESS )
-
     user=ForeignKey('users.User', CASCADE, verbose_name=_("User"))
     total_amount=DecimalField(_("Total"), max_digits=10, decimal_places=2)
-    
+
 
