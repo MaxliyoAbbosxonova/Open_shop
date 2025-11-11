@@ -116,4 +116,7 @@ class Order(CreatedBaseModel):
         date=CharField(_("Date"), max_length=255)
 
 
+class OrderItem(CreatedBaseModel):
+    pass
+
 
