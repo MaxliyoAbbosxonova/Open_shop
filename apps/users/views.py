@@ -38,5 +38,5 @@ class LoginAPIView(APIView):
         is_valid_code = check_sms_code(**serializer.data)
         if not is_valid_code:
             return Response({"message": "invalid code"}, status.HTTP_400_BAD_REQUEST)
-
+        # token generate
         return Response(serializer.data)
