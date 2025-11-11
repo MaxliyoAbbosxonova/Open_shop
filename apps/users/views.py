@@ -2,14 +2,17 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
-from users.utils import check_sms_code, random_code, send_sms_code
+from users.utils import check_sms_code, random_code, send_sms_code, SMSRateThrottle
 
 
 class SendCodeAPIView(APIView):
     serializer_class = SendSmsCodeSerializer
+    throttle_classes = [SMSRateThrottle]
+    throttle_scope = 'sms'
+
 
     def post(self, request):
-        serializer = SendSmsCodeSerializer(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         code = random_code()
         print(code)
@@ -22,7 +25,14 @@ class LoginAPIView(APIView):
     serializer_class = VerifySmsCodeSerializer
 
     def post(self, request, *args, **kwargs):
-        serializer = VerifySmsCodeSerializer(data=request.data, context={'request': request})
+        try:
+            self.check_throttles(request)
+        except Exception as e:
+            return Response(
+                {"error": " 1 daqiqada faqat 1 marta SMS yuborishingiz mumkin. Iltimos kuting."},
+                status=status.HTTP_429_TOO_MANY_REQUESTS
+            )
+        serializer =self.serializer_class(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
 
         is_valid_code = check_sms_code(**serializer.data)

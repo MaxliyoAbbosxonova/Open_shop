@@ -1,5 +1,12 @@
 from django.core.validators import FileExtensionValidator
-from django.db.models import CASCADE, DecimalField, ForeignKey, ImageField, Model, TextChoices
+from django.db.models import (
+    CASCADE,
+    DecimalField,
+    ForeignKey,
+    ImageField,
+    Model,
+    TextChoices,
+)
 from django.db.models.fields import CharField, IntegerField
 from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
@@ -73,12 +80,40 @@ class CartItem(CreatedBaseModel):
         verbose_name_plural = _("CartItems")
 
 
+class Branches(CreatedBaseModel):
+    name = CharField(_("Name"), max_length=255, )
+
+
 class Order(CreatedBaseModel):
     class Status(TextChoices):
         IN_PROGRESS = "in_progress", _("In Progress")
         COMPLETED = "completed", _("Completed")
         CANCELLED = "canceled", _("Canceled")
 
+    class Delivery(TextChoices):
+        BRANCH = "branch", _("Branch")
+        ADDRESS = "address", _("Address")
+
+
+    class Payment_type(TextChoices):
+        CASH="cash", _("Cash")
+        CARD = "card", _("Card")
+
     status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
+    quantity = ForeignKey('products.CartItem',CASCADE,default=1)
     user = ForeignKey('users.User', CASCADE, verbose_name=_("User"))
     total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
+    delivery=CharField(_("Delivery"), max_length=15,choices=Delivery.choices,default=Delivery.BRANCH)
+    country = CharField(_("Country"), max_length=255)
+    city = CharField(_("City"), max_length=255)
+    payment_type = CharField(_("Payment Type"), max_length=15 ,choices=Payment_type.choices)
+    if delivery == Delivery.ADDRESS:
+        address=CharField(_("Address"), max_length=255,null=False)
+    elif delivery == Delivery.BRANCH:
+        branch=ForeignKey('products.Branches',CASCADE,verbose_name=_("Branch"))
+    if payment_type == Payment_type.CARD:
+        card_number=CharField(_("Card Number"), max_length=255,default="1234123412341234")
+        date=CharField(_("Date"), max_length=255)
+
+
+
