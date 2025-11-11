@@ -1,5 +1,5 @@
 from products.fields import RecursiveField
-from products.models import Category, Highlight, Product
+from products.models import Category, Highlight, Product, Cart, CartItem, Order, OrderItem
 from rest_framework.serializers import ListSerializer, ModelSerializer
 
 
@@ -29,3 +29,27 @@ class HighlightModelSerializer(ModelSerializer):
     class Meta:
         model = Highlight
         fields = ('id', 'name', 'created_at')
+
+
+class CartModelSerializer(ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = '__all__'
+
+
+class CartItemModelSerializer(ModelSerializer):
+    class Meta:
+        model = CartItem
+        fields = '__all__'
+
+
+class OrderModelSerializer(ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
+class OrderItemModelSerializer(ModelSerializer):
+    class Meta:
+        model = OrderItem
+        fields = '__all__'
