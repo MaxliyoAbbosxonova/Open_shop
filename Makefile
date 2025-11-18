@@ -15,8 +15,14 @@ compile_msg:
 	python manage.py compilemessages -i .venv
 
 loaddata:
-	python3 manage.py loaddata categories products users
+	python3 manage.py loaddata branches
+
 
 mig2:
 	docker compose exec -it backend_service sh -c 'uv run python3 manage.py makemigrations'
 	docker compose exec -it backend_service sh -c 'uv run python3 manage.py migrate'
+flake:
+	flake8 .
+isort:
+	isort .
+

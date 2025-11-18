@@ -1,7 +1,15 @@
 from django.contrib.admin import ModelAdmin
-
 from products.fields import RecursiveField
-from products.models import Category, Highlight, Product, Cart, CartItem, Order, OrderItem, Branches
+from products.models import (
+    Branches,
+    Cart,
+    CartItem,
+    Category,
+    Highlight,
+    Order,
+    OrderItem,
+    Product,
+)
 from rest_framework.serializers import ListSerializer, ModelSerializer
 
 

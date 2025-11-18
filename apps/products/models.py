@@ -5,7 +5,8 @@ from django.db.models import (
     ForeignKey,
     ImageField,
     Model,
-    TextChoices, OneToOneField,
+    OneToOneField,
+    TextChoices,
 )
 from django.db.models.fields import CharField, IntegerField
 from django.utils.translation import gettext_lazy as _
@@ -67,17 +68,23 @@ class Highlight(CreatedBaseModel):
 
 
 class Cart(CreatedBaseModel):
-    user = OneToOneField('users.User', CASCADE, verbose_name=_("User"),related_name='cart')
+    user = OneToOneField('users.User', CASCADE, verbose_name=_("User"), related_name='cart')
+
+    def __str__(self):
+        return f"{self.user}"
 
 
 class CartItem(CreatedBaseModel):
     product = ForeignKey('products.Product', CASCADE, verbose_name=_("Products"))
     quantity = IntegerField(_("Quantity"), default=1)
-    cart = ForeignKey(Cart, CASCADE, verbose_name=_("Cart"),related_name='cart_item')
+    cart = ForeignKey(Cart, CASCADE, verbose_name=_("Cart"), related_name='cart_item')
 
     class Meta:
         verbose_name = _("CartItem")
         verbose_name_plural = _("CartItems")
+
+    def __str__(self):
+        return f"{self.id}"
 
 
 class Branches(CreatedBaseModel):
@@ -86,6 +93,9 @@ class Branches(CreatedBaseModel):
     class Meta:
         verbose_name = _("Branch")
         verbose_name_plural = _("Branches")
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Order(CreatedBaseModel):
@@ -103,24 +113,27 @@ class Order(CreatedBaseModel):
         CARD = "card", _("Card")
 
     status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
-    quantity = ForeignKey('products.CartItem',CASCADE,default=1)
-    user = ForeignKey('users.User', CASCADE, verbose_name=_("User"),related_name='order')
+    quantity = ForeignKey('products.CartItem', CASCADE, default=1)
+    user = ForeignKey('users.User', CASCADE, verbose_name=_("User"), related_name='order')
     total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
-    delivery=CharField(_("Delivery"), max_length=15,choices=Delivery.choices,default=Delivery.BRANCH)
-    country = CharField(_("Country"), max_length=255,null=True)
-    city = CharField(_("City"), max_length=255,null=True)
-    payment_type = CharField(_("Payment Type"), max_length=15 ,choices=Payment_type.choices)
-    address=CharField(_("Address"), max_length=255,null=False)
-    branch=ForeignKey('products.Branches',CASCADE,verbose_name=_("Branch"))
-    card_number=CharField(_("Card Number"), max_length=255,default="1234123412341234")
-    card_date=CharField(_("Card_Date"), max_length=255)
+    delivery = CharField(_("Delivery"), max_length=15, choices=Delivery.choices, default=Delivery.BRANCH)
+    country = CharField(_("Country"), max_length=255, null=True)
+    city = CharField(_("City"), max_length=255, null=True)
+    payment_type = CharField(_("Payment Type"), max_length=15, choices=Payment_type.choices)
+    address = CharField(_("Address"), max_length=255, null=False)
+    branch = ForeignKey('products.Branches', CASCADE, verbose_name=_("Branch"))
+    card_number = CharField(_("Card Number"), max_length=255, default="1234123412341234")
+    card_date = CharField(_("Card_Date"), max_length=255)
+
+    def __str__(self):
+        return f"{self.id}"
 
 
 class OrderItem(CreatedBaseModel):
     product = ForeignKey('products.Product', CASCADE, verbose_name=_("Products"))
-    order=ForeignKey('products.Order', CASCADE, verbose_name=_("Order"),related_name='order_item')
+    order = ForeignKey('products.Order', CASCADE, verbose_name=_("Order"), related_name='order_item')
     quantity = IntegerField(_("Quantity"), default=1)
     price = DecimalField(_("Price"), max_digits=10, decimal_places=2)
 
-
-
+    def __str__(self):
+        return f"{self.id}"

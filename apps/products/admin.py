@@ -1,7 +1,17 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
 from django.utils.safestring import mark_safe
-from products.models import Category, Highlight, Product, ProductAttribute, Cart, CartItem, OrderItem, Order, Branches
+from products.models import (
+    Branches,
+    Cart,
+    CartItem,
+    Category,
+    Highlight,
+    Order,
+    OrderItem,
+    Product,
+    ProductAttribute,
+)
 
 
 @admin.register(Highlight)
@@ -65,4 +75,7 @@ class OrderModelAdmin(ModelAdmin):
 
 @admin.register(Branches)
 class BranchModelAdmin(ModelAdmin):
-    list_display = ('id','name')
+    list_display = ('id', 'name')
+
+    def __str__(self):
+        return

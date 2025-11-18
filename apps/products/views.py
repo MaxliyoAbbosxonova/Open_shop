@@ -1,27 +1,36 @@
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
-from products.models import Category, Highlight, Product, Cart, OrderItem, CartItem, Order, Branches
 from django_filters.rest_framework import DjangoFilterBackend
+from products.models import (
+    Branches,
+    Cart,
+    CartItem,
+    Category,
+    Highlight,
+    Order,
+    OrderItem,
+    Product,
+)
 from products.serializers import (
+    BranchesModelSerializer,
+    CartItemModelSerializer,
+    CartModelSerializer,
     CategoryModelSerializer,
     HighlightModelSerializer,
+    OrderItemModelSerializer,
     ProductDetailModelSerializer,
-    ProductModelSerializer, CartModelSerializer, OrderItemModelSerializer, CartItemModelSerializer,
-    BranchesModelSerializer,
+    ProductModelSerializer,
 )
+from rest_framework import status
 from rest_framework.filters import OrderingFilter
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from shared.paginations import CustomPageNumberPagination
 
 
 class BranchesListCreateAPIView(ListCreateAPIView):
     queryset = Branches.objects.all()
     serializer_class = BranchesModelSerializer
-    ordering=('-created_at',)
-
 
 
 class ProductListAPIView(ListCreateAPIView):
