@@ -103,6 +103,7 @@ class Order(CreatedBaseModel):
         CARD = "card", _("Card")
 
     status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
+<<<<<<< HEAD
     quantity = ForeignKey('products.CartItem',CASCADE,default=1)
     user = ForeignKey('users.User', CASCADE, verbose_name=_("User"),related_name='order')
     total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
@@ -125,3 +126,22 @@ class OrderItem(CreatedBaseModel):
 
 
 
+=======
+    quantity = ForeignKey('products.CartItem', CASCADE, default=1)
+    user = ForeignKey('users.User', CASCADE, verbose_name=_("User"))
+    total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
+    delivery = CharField(_("Delivery"), max_length=15, choices=Delivery.choices, default=Delivery.BRANCH)
+    country = CharField(_("Country"), max_length=255)
+    city = CharField(_("City"), max_length=255)
+    payment_type = CharField(_("Payment Type"), max_length=15, choices=Payment_type.choices)
+    address = CharField(_("Address"), max_length=255, null=True, blank=True)
+    # elif delivery == Delivery.BRANCH:
+    #     branch = ForeignKey('products.Branches', CASCADE, verbose_name=_("Branch"))
+    # if payment_type == Payment_type.CARD:
+    #     card_number = CharField(_("Card Number"), max_length=255, default="1234123412341234")
+    #     date = CharField(_("Date"), max_length=255)
+
+
+class OrderItem(CreatedBaseModel):
+    pass
+>>>>>>> 5d3a32ead5f6a0306ff95b6daf4ef239b057876f
