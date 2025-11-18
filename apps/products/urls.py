@@ -3,7 +3,7 @@ from products.views import (
     CategoryListAPIView,
     HighlightListAPIView,
     ProductDetailAPIView,
-    ProductListAPIView, CartListAPIView, CartItemListAPIView, OrderListAPIView, OrderItemListAPIView,
+    ProductListAPIView, CartListAPIView, CartItemListCreateAPIView, OrderListCreateAPIView, CartConfirmApiView
 )
 
 urlpatterns = [
@@ -12,7 +12,7 @@ urlpatterns = [
     path('products/<slug:slug>/', ProductDetailAPIView.as_view(), name='product_detail'),
     path('highlights/', HighlightListAPIView.as_view(), name='product_highlight'),
     path('cart/', CartListAPIView.as_view(), name='cart'),
-    path('cart_item/', CartItemListAPIView.as_view(), name='cart_item'),
-    path('order/', OrderListAPIView.as_view(), name='order'),
-    path('order_item/', OrderItemListAPIView.as_view(), name='order_item'),
+    path('cart_item/', CartItemListCreateAPIView.as_view(), name='cart_item'),
+    path('order/', OrderListCreateAPIView.as_view(), name='order'),
+    path('cart/confirm/', CartConfirmApiView.as_view(), name='order_item'),
 ]

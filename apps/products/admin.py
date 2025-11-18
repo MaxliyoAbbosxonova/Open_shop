@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
 from django.utils.safestring import mark_safe
-from products.models import Category, Highlight, Product, ProductAttribute
+from products.models import Category, Highlight, Product, ProductAttribute, Cart, CartItem, OrderItem, Order, Branches
 
 
 @admin.register(Highlight)
@@ -31,3 +31,38 @@ class ProductModelAdmin(ModelAdmin):
     @admin.display(description="Product Image")
     def image_tag(self, obj: Product):
         return mark_safe(f'<img src="{obj.image.url}" width="150" height="150" />')
+
+
+@admin.register(Cart)
+class CartModelAdmin(ModelAdmin):
+    list_display = ('id', 'user')
+
+
+@admin.register(CartItem)
+class CartItemModelAdmin(ModelAdmin):
+    list_display = ('id', 'product', 'quantity', 'cart')
+
+
+@admin.register(OrderItem)
+class OrderItemModelAdmin(ModelAdmin):
+    list_display = ('id', 'product', 'quantity', 'order')
+
+
+@admin.register(Order)
+class OrderModelAdmin(ModelAdmin):
+    list_display = ('id', 'user', 'status', 'total_amount', 'quantity', 'delivery', 'payment_type', 'card_number')
+
+    @admin.display(description='Status')
+    def custom_status(self, obj: Order):
+        if obj.status == Order.Status.IN_PROGRESS:
+            emoji = '⌛️'
+        elif obj.status == Order.Status.COMPLETED:
+            emoji = '✅'
+        else:
+            emoji = '❌'
+        return f"{emoji} {obj.status}"
+
+
+@admin.register(Branches)
+class BranchModelAdmin(ModelAdmin):
+    list_display = ('id','name')

@@ -1,0 +1,92 @@
+[
+  {
+    "model": "products.branches",
+    "pk": 1,
+    "fields": {
+      "name": "Toshkent Filiali",
+      "created_at": "2024-01-10T09:15:00Z",
+      "updated_at": "2024-01-10T09:15:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 2,
+    "fields": {
+      "name": "Samarqand Filiali",
+      "created_at": "2024-01-11T10:20:00Z",
+      "updated_at": "2024-01-11T10:20:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 3,
+    "fields": {
+      "name": "Buxoro Filiali",
+      "created_at": "2024-01-12T08:45:00Z",
+      "updated_at": "2024-01-12T08:45:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 4,
+    "fields": {
+      "name": "Qo‘qon Filiali",
+      "created_at": "2024-01-13T07:30:00Z",
+      "updated_at": "2024-01-13T07:30:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 5,
+    "fields": {
+      "name": "Andijon Filiali",
+      "created_at": "2024-01-14T11:00:00Z",
+      "updated_at": "2024-01-14T11:00:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 6,
+    "fields": {
+      "name": "Namangan Filiali",
+      "created_at": "2024-01-14T14:25:00Z",
+      "updated_at": "2024-01-14T14:25:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 7,
+    "fields": {
+      "name": "Navoiy Filiali",
+      "created_at": "2024-01-15T09:40:00Z",
+      "updated_at": "2024-01-15T09:40:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 8,
+    "fields": {
+      "name": "Xorazm Filiali",
+      "created_at": "2024-01-15T12:10:00Z",
+      "updated_at": "2024-01-15T12:10:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 9,
+    "fields": {
+      "name": "Sirdaryo Filiali",
+      "created_at": "2024-01-16T08:05:00Z",
+      "updated_at": "2024-01-16T08:05:00Z"
+    }
+  },
+  {
+    "model": "products.branches",
+    "pk": 10,
+    "fields": {
+      "name": "Qashqadaryo Filiali",
+      "created_at": "2024-01-17T13:55:00Z",
+      "updated_at": "2024-01-17T13:55:00Z"
+    }
+  }
+]
