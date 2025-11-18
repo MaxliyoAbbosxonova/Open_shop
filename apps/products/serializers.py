@@ -1,4 +1,6 @@
 from django.contrib.admin import ModelAdmin
+from rest_framework.serializers import ListSerializer, ModelSerializer
+
 from products.fields import RecursiveField
 from products.models import (
     Branches,
@@ -10,7 +12,6 @@ from products.models import (
     OrderItem,
     Product,
 )
-from rest_framework.serializers import ListSerializer, ModelSerializer
 
 
 class BranchesModelSerializer(ModelAdmin):
@@ -23,7 +24,6 @@ class ProductModelSerializer(ModelSerializer):
     class Meta:
         model = Product
         fields = ('name', 'price', 'image', 'slug', 'category')
-        ordering = ('-created_at',)
 
 
 class CategoryModelSerializer(ModelSerializer):

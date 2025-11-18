@@ -1,4 +1,11 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status
+from rest_framework.filters import OrderingFilter
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from products.models import (
     Branches,
     Cart,
@@ -19,12 +26,6 @@ from products.serializers import (
     ProductDetailModelSerializer,
     ProductModelSerializer,
 )
-from rest_framework import status
-from rest_framework.filters import OrderingFilter
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
-from rest_framework.response import Response
-from rest_framework.views import APIView
 from shared.paginations import CustomPageNumberPagination
 
 
@@ -34,12 +35,12 @@ class BranchesListCreateAPIView(ListCreateAPIView):
 
 
 class ProductListAPIView(ListCreateAPIView):
-    queryset = Product.objects.all()
+    queryset = Product.objects.order_by('-created_at')
     serializer_class = ProductModelSerializer
     pagination_class = CustomPageNumberPagination
     permission_classes = (AllowAny,)
     filter_backends = [DjangoFilterBackend, OrderingFilter]
-    ordering_fields = ('price', '-price', 'created_at', '-created_at')
+    ordering_fields = 'price', 'created_at'
     ordering = ('-created_at',)
 
 
@@ -56,7 +57,7 @@ class CategoryListAPIView(ListCreateAPIView):
 
 
 class HighlightListAPIView(ListCreateAPIView):
-    queryset = Highlight.objects.filter().order_by('-created_at')
+    queryset = Highlight.objects.order_by('-created_at')
     serializer_class = HighlightModelSerializer
 
 
@@ -115,5 +116,5 @@ class CartConfirmApiView(APIView):
 
         OrderItem.objects.bulk_create(order_items_list)
         order.total_amount = total_amount
-        order.save()
+        order.save(update_fields=['total_amount'])
         return Response({"message": "Order created successfully"}, status.HTTP_201_CREATED)
