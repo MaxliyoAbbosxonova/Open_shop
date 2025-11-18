@@ -20,6 +20,7 @@ from shared.paginations import CustomPageNumberPagination
 class BranchesListCreateAPIView(ListCreateAPIView):
     queryset = Branches.objects.all()
     serializer_class = BranchesModelSerializer
+    ordering=('-created_at',)
 
 
 
