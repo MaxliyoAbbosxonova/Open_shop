@@ -3,7 +3,7 @@ from typing import Any
 
 from django.contrib.auth import authenticate
 from django.core.exceptions import ValidationError
-from rest_framework.fields import CharField
+from rest_framework.fields import CharField, IntegerField
 from rest_framework.serializers import ModelSerializer, Serializer
 from rest_framework_simplejwt.tokens import RefreshToken, Token
 from users.models import User
@@ -39,7 +39,7 @@ class SendSmsCodeSerializer(ModelSerializer):
 
 class VerifySmsCodeSerializer(Serializer):
     phone = CharField(default='933977090')
-    code = CharField(default='707070')
+    code = IntegerField(default=707070)
     token_class = RefreshToken
 
     default_error_messages = {
@@ -55,7 +55,8 @@ class VerifySmsCodeSerializer(Serializer):
         return phone.removeprefix('998')
 
     def validate(self, attrs: dict[str, Any]):
-        self.user = authenticate(phone=attrs['phone'], request=self.context['request'])
+        # self.user = authenticate(phone=attrs['phone'], request=self.context['request'])
+        self.user = User.objects.filter(phone=attrs['phone']).first()
 
         if self.user is None:
             raise ValidationError(self.default_error_messages['no_active_account'])
