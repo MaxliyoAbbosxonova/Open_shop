@@ -50,14 +50,10 @@ api/v1/products/?category=203-foto-va-video-texnika
 9. api/v1/part/slider slider nomli model va apisini yozish              Done +
 10. category ga products_count qoshilsin
 11. Categories va products ga pagination qo'shildi                      Done +
-12. sms qayta yuborishda, vaqtini chiqarib qoydim (agar 1minut bolmagan blolsa)        X
+12. sms qayta yuborishda, vaqtini chiqarib qoyish (agar 1minut bolmagan bolsa)        X
 13. product listda order by qoshish (-narxi, -created_at)               Done +
 14. order apisini chiqarish (address, phone, payment_type)                            X
 15. list ni barcha userlar kora oladi, qoshish, ozgartira olish, ochirish esa faqat admin tomonidan
 16. userni admin, user ga bolaklash                                     Done
 17. verify code qilganidan keyin jwt token bilan user data sini qaytarish kk          Done
 
-
-jwt token qaytarvotti lekin bazada yoq nomer yuvorilsa
-{Authorization header must contain two space-delimited values}
-shunaqa cqvotti g'alati bob qovoti user
