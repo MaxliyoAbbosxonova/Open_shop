@@ -115,15 +115,15 @@ class Order(CreatedBaseModel):
     status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
     quantity = ForeignKey('products.CartItem', CASCADE, default=1)
     user = ForeignKey('users.User', CASCADE, verbose_name=_("User"), related_name='order')
-    total_amount = DecimalField(_("Total"), max_digits=10, decimal_places=2)
+    total_amount = IntegerField(_("Total"), default=0)
     delivery = CharField(_("Delivery"), max_length=15, choices=Delivery.choices, default=Delivery.BRANCH)
-    country = CharField(_("Country"), max_length=255, null=True)
-    city = CharField(_("City"), max_length=255, null=True)
+    country = CharField(_("Country"), max_length=255, null=True, blank=True)
+    city = CharField(_("City"), max_length=255, null=True,blank=True)
     payment_type = CharField(_("Payment Type"), max_length=15, choices=Payment_type.choices)
-    address = CharField(_("Address"), max_length=255, null=False)
-    branch = ForeignKey('products.Branches', CASCADE, verbose_name=_("Branch"))
-    card_number = CharField(_("Card Number"), max_length=255, default="1234123412341234")
-    card_date = CharField(_("Card_Date"), max_length=255)
+    address = CharField(_("Address"), max_length=255, blank=True,null=True)
+    branch = ForeignKey('products.Branches', CASCADE, verbose_name=_("Branch"),blank=True,null=True)
+    card_number = CharField(_("Card Number"), max_length=255, default="1234123412341234",blank=True,null=True)
+    card_date = CharField(_("Card_Date"), max_length=255,blank=True,null=True)
 
     def __str__(self):
         return f"{self.id}"
