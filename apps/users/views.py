@@ -1,13 +1,10 @@
-import time
-
 import redis
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from users.models import User
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
-from users.utils import check_sms_code, random_code, send_sms_code, _get_login_key
+from users.utils import check_sms_code, random_code, send_sms_code
 
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
