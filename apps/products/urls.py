@@ -1,11 +1,10 @@
 from django.urls import path
 from products.views import (
-    CartConfirmApiView,
-    CartItemListCreateAPIView,
+    CartItemListAPIView,
     CartListAPIView,
     CategoryListAPIView,
     HighlightListAPIView,
-    OrderListCreateAPIView,
+    OrderCreateApiView,
     ProductDetailAPIView,
     ProductListAPIView,
 )
@@ -16,7 +15,6 @@ urlpatterns = [
     path('products/<slug:slug>/', ProductDetailAPIView.as_view(), name='product_detail'),
     path('highlights/', HighlightListAPIView.as_view(), name='product_highlight'),
     path('cart/', CartListAPIView.as_view(), name='cart'),
-    path('cart_item/', CartItemListCreateAPIView.as_view(), name='cart_item'),
-    path('order/', OrderListCreateAPIView.as_view(), name='order'),
-    path('cart/confirm/', CartConfirmApiView.as_view(), name='order_item'),
+    path('cart_item/', CartItemListAPIView.as_view(), name='cart_item'),
+    path('order/', OrderCreateApiView.as_view(), name='order'),
 ]

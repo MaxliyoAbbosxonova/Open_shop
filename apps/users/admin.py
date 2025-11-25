@@ -5,17 +5,18 @@ from users.models import User
 
 @admin.register(User)
 class UserModelAdmin(UserAdmin):
-    list_display = ('id', 'phone', 'email', 'is_active', 'is_staff')
-    ordering = ('phone',)
+    list_display = ('id', 'phone', 'email', 'is_active', 'is_staff', 'role')
+    ordering = ('phone', 'role')
     fieldsets = (
         (None, {'fields': ('phone', 'password')}),
         ('Personal info', {'fields': ('email',)}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions', 'role')}),
     )
 
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('phone', 'email', 'password1', 'password2'),
+            'fields': ('phone', 'email', 'password1', 'password2', 'role'),
         }),
     )
+

@@ -15,7 +15,7 @@ compile_msg:
 	python manage.py compilemessages -i .venv
 
 loaddata:
-	python3 manage.py loaddata branches
+	python3 manage.py loaddata branches users
 
 
 mig2:

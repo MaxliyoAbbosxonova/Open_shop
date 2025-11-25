@@ -1,7 +1,6 @@
 from random import randint
 
 from django.core.cache import cache
-from rest_framework.throttling import ScopedRateThrottle
 
 
 def random_code():
@@ -14,7 +13,6 @@ def _get_login_key(phone):
 
 def send_sms_code(phone: str, code: int, expire_time=60):
     print(f"[TEST] Phone: {phone} == Sms code: {code}")
-
     _key = _get_login_key(phone)
     cache.set(_key, code, expire_time)
 
@@ -24,7 +22,3 @@ def check_sms_code(phone: str, code: int):
     _code = cache.get(_key)
     print(_code, code)
     return _code == code
-
-
-class SMSRateThrottle(ScopedRateThrottle):
-    scope = 'sms'

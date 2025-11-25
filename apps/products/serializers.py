@@ -1,6 +1,4 @@
 from django.contrib.admin import ModelAdmin
-from rest_framework.serializers import ListSerializer, ModelSerializer
-
 from products.fields import RecursiveField
 from products.models import (
     Branches,
@@ -12,6 +10,7 @@ from products.models import (
     OrderItem,
     Product,
 )
+from rest_framework.serializers import ListSerializer, ModelSerializer
 
 
 class BranchesModelSerializer(ModelAdmin):
@@ -57,6 +56,14 @@ class CartItemModelSerializer(ModelSerializer):
     class Meta:
         model = CartItem
         fields = '__all__'
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        cart = Cart.objects.filter(user=user).first()
+        if not cart:
+            cart = Cart.objects.create(user=user)
+
+        return super().create(validated_data | {'cart_id': cart.id})
 
 
 class OrderModelSerializer(ModelSerializer):

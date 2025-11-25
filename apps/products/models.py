@@ -13,7 +13,6 @@ from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
-
 from shared.models import CreatedBaseModel, SlugBaseModel
 
 
@@ -62,7 +61,7 @@ class ProductAttribute(Model):
 
 class Highlight(CreatedBaseModel):
     name = CharField(_("Name"), max_length=255)
-    image = ImageField(upload_to='products/%Y/%m/%d')
+    image = ImageField(upload_to='products/%Y/%m/%d', null=True, blank=True)
 
     def __str__(self):
         return f"Advertising: {self.id}"

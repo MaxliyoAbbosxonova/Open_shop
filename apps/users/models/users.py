@@ -2,7 +2,7 @@ import re
 
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
-from django.db.models import EmailField
+from django.db.models import EmailField, TextChoices
 from django.db.models.fields import CharField
 from django.utils.translation import gettext_lazy as _
 from shared.models import UUIDBaseModel
@@ -10,8 +10,14 @@ from users.models.managers import CustomUserManager
 
 
 class User(AbstractUser, UUIDBaseModel):
+    class Role(TextChoices):
+        ADMIN = "admin", _("Admin")
+        STAFF = "staff", _("Staff")
+        USER = "user", _("User")
+
     phone = CharField(max_length=11, unique=True, verbose_name=_("Phone number"))
     email = EmailField(unique=True, null=True, blank=True, verbose_name=_("Email address"))
+    role = CharField(choices=Role.choices, default=Role.USER, max_length=8, verbose_name=_("Role"))
     username = None
 
     USERNAME_FIELD = 'phone'

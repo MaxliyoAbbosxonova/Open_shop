@@ -1,11 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import status
-from rest_framework.filters import OrderingFilter
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
+from drf_spectacular.utils import extend_schema
 from products.models import (
     Branches,
     Cart,
@@ -22,80 +16,94 @@ from products.serializers import (
     CartModelSerializer,
     CategoryModelSerializer,
     HighlightModelSerializer,
-    OrderItemModelSerializer,
     ProductDetailModelSerializer,
     ProductModelSerializer,
 )
+from rest_framework import status
+from rest_framework.filters import OrderingFilter
+from rest_framework.generics import (
+    CreateAPIView,
+    ListAPIView,
+    ListCreateAPIView,
+    RetrieveUpdateDestroyAPIView,
+)
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from shared.paginations import CustomPageNumberPagination
+from shared.permissions import UserPermissions
 
 
+@extend_schema(tags=['Branches'])
 class BranchesListCreateAPIView(ListCreateAPIView):
     queryset = Branches.objects.all()
     serializer_class = BranchesModelSerializer
+    permission_classes = [UserPermissions]
+    ordering_fields = ["created_at"]
 
 
-class ProductListAPIView(ListCreateAPIView):
+@extend_schema(tags=['Products'])
+class ProductListAPIView(ListAPIView):
     queryset = Product.objects.order_by('-created_at')
     serializer_class = ProductModelSerializer
     pagination_class = CustomPageNumberPagination
-    permission_classes = (AllowAny,)
+    permission_classes = (UserPermissions,)
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     ordering_fields = 'price', 'created_at'
     ordering = ('-created_at',)
 
 
-class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
+@extend_schema(tags=['Products'])
+class ProductDetailAPIView(RetrieveUpdateDestroyAPIView, CreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductDetailModelSerializer
+    permission_classes = (UserPermissions,)
 
 
+@extend_schema(tags=['Category'])
 class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryModelSerializer
-    permission_classes = [AllowAny, ]
+    permission_classes = [UserPermissions, ]
     pagination_class = CustomPageNumberPagination
 
 
+@extend_schema(tags=['Highlight'])
 class HighlightListAPIView(ListCreateAPIView):
     queryset = Highlight.objects.order_by('-created_at')
     serializer_class = HighlightModelSerializer
+    permission_classes = [UserPermissions, ]
 
 
+@extend_schema(tags=['Order'])
 class CartListAPIView(ListCreateAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartModelSerializer
+    permission_classes = [UserPermissions, ]
 
 
+@extend_schema(tags=['Order'])
 class CartRetrieveAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartModelSerializer
+    permission_classes = [UserPermissions, ]
 
 
-class CartItemListCreateAPIView(ListCreateAPIView):
+@extend_schema(tags=['Order'])
+class CartItemListAPIView(ListAPIView):
     queryset = CartItem.objects.all()
     serializer_class = CartItemModelSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    permission_classes = [UserPermissions, ]
 
     def get_queryset(self):
         qs = super().get_queryset()
         return qs.filter(cart__user=self.request.user)
 
 
-class OrderListCreateAPIView(ListCreateAPIView):
-    queryset = OrderItem.objects.all()
-    serializer_class = OrderItemModelSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly, ]
-    pagination_class = CustomPageNumberPagination
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(cart__user=self.request.user)
-
-
-class CartConfirmApiView(APIView):
+@extend_schema(tags=['Order'])
+class OrderCreateApiView(APIView):
     queryset = Cart.objects.all()
     serializer_class = CartItemModelSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    permission_classes = [UserPermissions, ]
 
     def post(self, request, *args, **kwargs):
         user = request.user

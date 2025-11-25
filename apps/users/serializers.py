@@ -1,7 +1,6 @@
 import re
 from typing import Any
 
-from django.contrib.auth import authenticate
 from django.core.exceptions import ValidationError
 from rest_framework.fields import CharField, IntegerField
 from rest_framework.serializers import ModelSerializer, Serializer
@@ -13,6 +12,7 @@ class UserModelSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = "__all__"
+        extra_kwargs = {'password': {'write_only': True}}
 
 
 class SendSmsCodeSerializer(ModelSerializer):
@@ -29,7 +29,7 @@ class SendSmsCodeSerializer(ModelSerializer):
         phone = attrs['phone']
         user, created = User.objects.get_or_create(phone=phone)
         user.set_unusable_password()
-
+        user.save()
         return super().validate(attrs)
 
     class Meta:
@@ -55,7 +55,6 @@ class VerifySmsCodeSerializer(Serializer):
         return phone.removeprefix('998')
 
     def validate(self, attrs: dict[str, Any]):
-        # self.user = authenticate(phone=attrs['phone'], request=self.context['request'])
         self.user = User.objects.filter(phone=attrs['phone']).first()
 
         if self.user is None:
