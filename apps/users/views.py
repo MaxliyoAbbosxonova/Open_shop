@@ -1,5 +1,6 @@
 import redis
 from rest_framework import status
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -11,6 +12,7 @@ redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_respo
 
 class SendCodeAPIView(APIView):
     serializer_class = SendSmsCodeSerializer
+    permission_classes = (AllowAny,)
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -23,6 +25,7 @@ class SendCodeAPIView(APIView):
 
 class LoginAPIView(APIView):
     serializer_class = VerifySmsCodeSerializer
+    permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
