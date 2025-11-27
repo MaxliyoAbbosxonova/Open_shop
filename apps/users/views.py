@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
 from users.utils import check_sms_code, random_code, send_sms_code
 
-redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
 
 class SendCodeAPIView(APIView):
@@ -19,7 +18,16 @@ class SendCodeAPIView(APIView):
         serializer.is_valid(raise_exception=True)
         code = random_code()
         phone = serializer.validated_data['phone']
-        send_sms_code(phone, code)
+        # send_sms_code(phone, code)
+        result = send_sms_code(phone, code)
+
+        if not result["allowed"]:
+            return Response(
+                {
+                    "message": f"{result['remain_seconds']} sekunddan so'ng yubora olasiz."
+                },
+                status=429
+            )
         return Response({"message": "send sms code"})
 
 
