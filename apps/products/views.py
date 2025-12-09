@@ -1,5 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 from products.models import (
     Branches,
     Cart,
@@ -35,6 +37,7 @@ from shared.permissions import UserPermissions
 
 @extend_schema(tags=['Branches'])
 class BranchesListCreateAPIView(ListCreateAPIView):
+    authentication_classes = ()
     queryset = Branches.objects.all()
     serializer_class = BranchesModelSerializer
     permission_classes = [UserPermissions]
@@ -46,6 +49,7 @@ class ProductListAPIView(ListAPIView):
     queryset = Product.objects.order_by('-created_at')
     serializer_class = ProductModelSerializer
     pagination_class = CustomPageNumberPagination
+    authentication_classes = ()
     permission_classes = (UserPermissions,)
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     ordering_fields = 'price', 'created_at'
@@ -64,6 +68,7 @@ class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryModelSerializer
     permission_classes = [UserPermissions, ]
+    authentication_classes = ()
     pagination_class = CustomPageNumberPagination
 
 
@@ -72,6 +77,7 @@ class HighlightListAPIView(ListCreateAPIView):
     queryset = Highlight.objects.order_by('-created_at')
     serializer_class = HighlightModelSerializer
     permission_classes = [UserPermissions, ]
+    authentication_classes = ()
 
 
 @extend_schema(tags=['Order'])

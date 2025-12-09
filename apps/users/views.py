@@ -1,5 +1,6 @@
 import redis
 from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -12,6 +13,7 @@ from users.utils import check_sms_code, random_code, send_sms_code
 class SendCodeAPIView(APIView):
     serializer_class = SendSmsCodeSerializer
     permission_classes = (AllowAny,)
+    authentication_classes = ()
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -34,6 +36,7 @@ class SendCodeAPIView(APIView):
 class LoginAPIView(APIView):
     serializer_class = VerifySmsCodeSerializer
     permission_classes = (AllowAny,)
+    authentication_classes = ()
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
