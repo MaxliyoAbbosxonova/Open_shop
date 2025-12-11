@@ -1,13 +1,14 @@
 import os
 from pathlib import Path
 
-from PIL import Image
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from django.utils.translation import gettext_lazy as _
-
-from products.models import Product  # Ilovangiz nomini to'g'rilang agar boshqacha bo'lsa
+from PIL import Image
+from products.models import (
+    Product,  # Ilovangiz nomini to'g'rilang agar boshqacha bo'lsa
+)
 
 
 class Command(BaseCommand):

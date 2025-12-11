@@ -1,10 +1,14 @@
-from root import settings
-from django import template
-from PIL import Image
-import os
 import logging
+import os
+
+from PIL import Image
+from django import template
+
+from root import settings
+
 register = template.Library()
 logger = logging.getLogger(__name__)
+
 
 def convert_to_webp(image_path):
     webp_path = image_path.rsplit(".", 1)[0] + ".webp"
@@ -21,6 +25,7 @@ def convert_to_webp(image_path):
     except Exception as e:
         logger.error(f"WebP conversion error for {image_path}: {e}")
         return None
+
 
 @register.simple_tag(takes_context=True)
 def webp(context, img_url):
@@ -40,4 +45,3 @@ def webp(context, img_url):
             return webp_url
 
     return original_url
-

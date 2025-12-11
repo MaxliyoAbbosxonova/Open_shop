@@ -5,7 +5,6 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.views import TokenViewBase
-
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
 from users.utils import check_sms_code, random_code, send_sms_code
 

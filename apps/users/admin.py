@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+
 from users.models import User
 
 
@@ -19,4 +20,3 @@ class UserModelAdmin(UserAdmin):
             'fields': ('phone', 'email', 'password1', 'password2', 'role'),
         }),
     )
-

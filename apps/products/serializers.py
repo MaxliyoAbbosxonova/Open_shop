@@ -1,16 +1,19 @@
 from django.contrib.admin import ModelAdmin
+from rest_framework.serializers import ListSerializer, ModelSerializer
+
 from products.fields import RecursiveField
 from products.models import (
     Branches,
     Cart,
     CartItem,
     Category,
+    District,
     Highlight,
     Order,
     OrderItem,
-    Product, Region, District,
+    Product,
+    Region,
 )
-from rest_framework.serializers import ListSerializer, ModelSerializer
 
 
 class BranchesModelSerializer(ModelAdmin):
@@ -82,6 +85,7 @@ class RegionModelSerializer(ModelSerializer):
     class Meta:
         model = Region
         fields = '__all__'
+
 
 class DistrictModelSerializer(ModelSerializer):
     class Meta:

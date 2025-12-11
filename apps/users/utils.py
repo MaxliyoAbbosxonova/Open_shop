@@ -1,7 +1,7 @@
-from random import randint
 import time
+from random import randint
+
 import redis
-from django.core.cache import cache
 
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 

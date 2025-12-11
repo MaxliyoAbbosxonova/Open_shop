@@ -1,7 +1,5 @@
-from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
-from rest_framework.filters import OrderingFilter
 from rest_framework.generics import (
     ListAPIView,
     ListCreateAPIView,
@@ -16,19 +14,23 @@ from products.models import (
     Cart,
     CartItem,
     Category,
+    District,
     Highlight,
     Order,
     OrderItem,
-    Product, Region, District,
+    Product,
+    Region,
 )
 from products.serializers import (
     BranchesModelSerializer,
     CartItemModelSerializer,
     CartModelSerializer,
     CategoryModelSerializer,
+    DistrictModelSerializer,
     HighlightModelSerializer,
     ProductDetailModelSerializer,
-    ProductModelSerializer, RegionModelSerializer, DistrictModelSerializer,
+    ProductModelSerializer,
+    RegionModelSerializer,
 )
 from shared.paginations import CustomPageNumberPagination
 from shared.permissions import UserPermission
@@ -58,9 +60,9 @@ class BranchesListCreateAPIView(ListCreateAPIView):
 class ProductListAPIView(APIView):
     def get_permissions(self):
         if self.request.method == 'GET':
-              permission_classes = [AllowAny,]  # Anyone can view
+            permission_classes = [AllowAny, ]  # Anyone can view
         elif self.request.method == 'POST':
-              permission_classes = [IsAdminUser]
+            permission_classes = [IsAdminUser]
 
         return [permission() for permission in permission_classes]
 
@@ -69,7 +71,7 @@ class ProductListAPIView(APIView):
         serializer = ProductModelSerializer(products, many=True)
         return Response(serializer.data)
 
-    def post(self, request,format=None):
+    def post(self, request, format=None):
         serializer = ProductModelSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -83,7 +85,6 @@ class ProductListAPIView(APIView):
     # filter_backends = [DjangoFilterBackend, OrderingFilter]
     # ordering_fields = 'price', 'created_at'
     # ordering = ('-created_at',)
-
 
 
 @extend_schema(tags=['Products'])
@@ -167,6 +168,7 @@ class OrderCreateApiView(APIView):
 class RegionListCreateAPIView(ListCreateAPIView):
     queryset = Region.objects.all()
     serializer_class = RegionModelSerializer
+
 
 class DistrictListCreateAPIView(ListCreateAPIView):
     queryset = District.objects.all()
