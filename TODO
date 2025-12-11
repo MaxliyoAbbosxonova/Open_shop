@@ -68,8 +68,8 @@ districts.json
 
 18. product list va detail ochiq bolishi kerak (swaggerdagi qulfcha ham)
 19. product yaratishda permission qoshish kk (swaggerdagi qulfchani ham togrilash)
-20. (django command) oldingi rasmlarni barchasini webp formatiga otkazish db dagilarni ham ozgartirish
-21. rasmlarni avtomatik webp formatida saqlash
+20. (django command) oldingi rasmlarni barchasini webp formatiga otkazish db dagilarni ham ozgartirish Done +
+21. rasmlarni avtomatik webp formatida saqlash Done +
 22.  /en/api/v1/users/refresh-token/ qulfcha
 
 

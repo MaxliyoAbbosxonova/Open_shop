@@ -1,5 +1,8 @@
-import os
+from io import BytesIO
 
+from PIL import Image
+from django.core.files.base import ContentFile
+from django.core.files.uploadedfile import InMemoryUploadedFile, TemporaryUploadedFile
 from django.core.validators import FileExtensionValidator
 from django.db.models import (
     CASCADE,
@@ -16,10 +19,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
-from products.utils import convert_to_webp
-from root import settings
 from shared.models import CreatedBaseModel, SlugBaseModel
-
 
 
 class Category(MPTTModel, SlugBaseModel):
@@ -47,11 +47,23 @@ class Product(CreatedBaseModel, SlugBaseModel):
         from django.urls import reverse
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
 
-    # def save(self, *args, **kwargs):
-    #     super().save(*args, **kwargs)
-    #
-    #     full_path = os.path.join(settings.MEDIA_ROOT, self.image.name)
-    #     convert_to_webp(full_path)
+    def convert_to_webp(self):
+        is_new_upload = isinstance(self.image.file, (InMemoryUploadedFile, TemporaryUploadedFile))
+
+        if self._state.adding or is_new_upload:
+            img = Image.open(self.image)
+            img = img.convert("RGB")
+            buffer = BytesIO()
+            img.save(buffer, format="WEBP", quality=85)
+            buffer.seek(0)
+
+            filename = f"{self.image.name.split('.')[0]}.webp"
+            self.image = ContentFile(buffer.read(), name=filename)
+            buffer.close()
+
+    def save(self, *args, **kwargs):
+        self.convert_to_webp()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Product')
@@ -101,7 +113,7 @@ class CartItem(CreatedBaseModel):
 
 class Branches(CreatedBaseModel):
     name = CharField(_("Name"), max_length=255)
-    location = CharField(_("Location"), max_length=255,unique=False)
+    location = CharField(_("Location"), max_length=255, unique=False)
 
     # TODO add location
 
@@ -131,8 +143,10 @@ class Order(CreatedBaseModel):
     user = ForeignKey('users.User', CASCADE, verbose_name=_("User"), related_name='orders')
     total_amount = PositiveIntegerField(_("Total"), default=0)
     delivery_type = CharField(_("Delivery"), max_length=15, choices=DeliveryType.choices, default=DeliveryType.BRANCH)
-    region=ForeignKey('products.Region',SET_NULL,verbose_name=_("Region"),related_name='orders')
-    district=ForeignKey('products.District',SET_NULL,verbose_name=_("District"),related_name='orders')
+    region = ForeignKey('products.Region', SET_NULL, null=True, blank=True, verbose_name=_("Region"),
+                        related_name='orders')
+    district = ForeignKey('products.District', SET_NULL, null=True, blank=True, verbose_name=_("District"),
+                          related_name='orders')
     payment_type = CharField(_("Payment Type"), max_length=15, choices=PaymentType.choices)
     address = CharField(_("Address"), max_length=255, blank=True, null=True)
     branch = ForeignKey('products.Branches', SET_NULL, verbose_name=_("Branch"), blank=True, null=True)
@@ -158,15 +172,18 @@ class OrderItem(CreatedBaseModel):
 
 class Region(Model):
     name = CharField(_("Name"), max_length=255)
+
     class Meta:
         verbose_name = _("Region")
         verbose_name_plural = _("Regions")
+
     def __str__(self):
         return f"{self.name}"
 
+
 class District(Model):
     name = CharField(_("Name"), max_length=255)
-    region=ForeignKey(Region, CASCADE, verbose_name=_("Region"), related_name='districts')
+    region = ForeignKey(Region, CASCADE, verbose_name=_("Region"), related_name='districts')
 
     class Meta:
         verbose_name = _("District")

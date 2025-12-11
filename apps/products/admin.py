@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
 from django.utils.safestring import mark_safe
+
 from products.models import (
     Branches,
     Cart,
@@ -60,7 +61,7 @@ class OrderItemModelAdmin(ModelAdmin):
 
 @admin.register(Order)
 class OrderModelAdmin(ModelAdmin):
-    list_display = ('id', 'user', 'status', 'total_amount', 'quantity', 'delivery_type', 'payment_type', 'card_number')
+    list_display = 'id', 'user', 'status', 'total_amount', 'delivery_type', 'payment_type', 'card_number'
 
     @admin.display(description='Status')
     def custom_status(self, obj: Order):
