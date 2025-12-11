@@ -60,7 +60,7 @@ class OrderItemModelAdmin(ModelAdmin):
 
 @admin.register(Order)
 class OrderModelAdmin(ModelAdmin):
-    list_display = ('id', 'user', 'status', 'total_amount', 'quantity', 'delivery', 'payment_type', 'card_number')
+    list_display = ('id', 'user', 'status', 'total_amount', 'quantity', 'delivery_type', 'payment_type', 'card_number')
 
     @admin.display(description='Status')
     def custom_status(self, obj: Order):

@@ -1,13 +1,23 @@
-import redis
 from rest_framework import status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework_simplejwt.settings import api_settings
+from rest_framework_simplejwt.views import TokenViewBase
 
 from users.serializers import SendSmsCodeSerializer, VerifySmsCodeSerializer
 from users.utils import check_sms_code, random_code, send_sms_code
 
+
+class CustomTokenRefreshView(TokenViewBase):
+    """
+    Takes a refresh type JSON web token and returns an access type JSON web
+    token if the refresh token is valid.
+    """
+
+    _serializer_class = api_settings.TOKEN_REFRESH_SERIALIZER
+    authentication_classes = (JWTAuthentication,)
 
 
 class SendCodeAPIView(APIView):

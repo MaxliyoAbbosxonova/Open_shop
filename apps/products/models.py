@@ -1,3 +1,5 @@
+import os
+
 from django.core.validators import FileExtensionValidator
 from django.db.models import (
     CASCADE,
@@ -14,7 +16,10 @@ from django_ckeditor_5.fields import CKEditor5Field
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
+from products.utils import convert_to_webp
+from root import settings
 from shared.models import CreatedBaseModel, SlugBaseModel
+
 
 
 class Category(MPTTModel, SlugBaseModel):
@@ -41,6 +46,12 @@ class Product(CreatedBaseModel, SlugBaseModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('product_detail', kwargs={'id': self.id, 'slug': self.slug})
+
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #
+    #     full_path = os.path.join(settings.MEDIA_ROOT, self.image.name)
+    #     convert_to_webp(full_path)
 
     class Meta:
         verbose_name = _('Product')
@@ -90,6 +101,7 @@ class CartItem(CreatedBaseModel):
 
 class Branches(CreatedBaseModel):
     name = CharField(_("Name"), max_length=255)
+    location = CharField(_("Location"), max_length=255,unique=False)
 
     # TODO add location
 
@@ -116,12 +128,11 @@ class Order(CreatedBaseModel):
         CARD = "card", _("Card")
 
     status = CharField(_("Status"), max_length=15, choices=Status.choices, default=Status.IN_PROGRESS)
-    quantity = PositiveIntegerField()
     user = ForeignKey('users.User', CASCADE, verbose_name=_("User"), related_name='orders')
     total_amount = PositiveIntegerField(_("Total"), default=0)
     delivery_type = CharField(_("Delivery"), max_length=15, choices=DeliveryType.choices, default=DeliveryType.BRANCH)
-    country = CharField(_("Country"), max_length=255, null=True, blank=True)  # TODO region
-    city = CharField(_("City"), max_length=255, null=True, blank=True)  # district
+    region=ForeignKey('products.Region',SET_NULL,verbose_name=_("Region"),related_name='orders')
+    district=ForeignKey('products.District',SET_NULL,verbose_name=_("District"),related_name='orders')
     payment_type = CharField(_("Payment Type"), max_length=15, choices=PaymentType.choices)
     address = CharField(_("Address"), max_length=255, blank=True, null=True)
     branch = ForeignKey('products.Branches', SET_NULL, verbose_name=_("Branch"), blank=True, null=True)
@@ -143,3 +154,20 @@ class OrderItem(CreatedBaseModel):
 
     def __str__(self):
         return f"{self.id}"
+
+
+class Region(Model):
+    name = CharField(_("Name"), max_length=255)
+    class Meta:
+        verbose_name = _("Region")
+        verbose_name_plural = _("Regions")
+    def __str__(self):
+        return f"{self.name}"
+
+class District(Model):
+    name = CharField(_("Name"), max_length=255)
+    region=ForeignKey(Region, CASCADE, verbose_name=_("Region"), related_name='districts')
+
+    class Meta:
+        verbose_name = _("District")
+        verbose_name_plural = _("Districts")

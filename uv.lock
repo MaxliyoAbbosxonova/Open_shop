@@ -205,6 +205,32 @@ wheels = [
 ]
 
 [[package]]
+name = "django-webp"
+version = "3.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "asgiref" },
+    { name = "django" },
+    { name = "pillow" },
+    { name = "sqlparse" },
+    { name = "whitenoise" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e7/b4/177eadadb57b5d53d31f4bdb3400082b090971c7a534127c94126a2fb1c3/django-webp-3.0.0.tar.gz", hash = "sha256:59bf03538b46f5bf5a80b7e0d39280587f951fe3fc3b7834f9d661bdd27aa116", size = 153236, upload-time = "2023-09-02T22:17:34.037Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/04/72/883626339e5876a580804fc0ce21e2ca585bd8a1c53734cd580d47155d7e/django_webp-3.0.0-py3-none-any.whl", hash = "sha256:67286441df0eddfad0c5d439f5092e993714975e212a1b7194ae7c8bf483abbf", size = 11393, upload-time = "2023-09-02T22:17:32.301Z" },
+]
+
+[[package]]
+name = "django-webp-converter"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/57/e1/020a47cbcbd39f1e6269e45a05693edccd7673ec850cb059cab633082be8/django-webp-converter-0.3.0.tar.gz", hash = "sha256:45bfc8cd1abc65497b7fd46678b63187346dc0d0c1512a36f79519014442e569", size = 4487, upload-time = "2020-04-21T22:57:41.117Z" }
+
+[[package]]
 name = "djangorestframework"
 version = "3.16.1"
 source = { registry = "https://pypi.org/simple" }
@@ -348,6 +374,8 @@ dependencies = [
     { name = "django-filter" },
     { name = "django-jazzmin" },
     { name = "django-mptt" },
+    { name = "django-webp" },
+    { name = "django-webp-converter" },
     { name = "djangorestframework" },
     { name = "djangorestframework-simplejwt" },
     { name = "dotenv" },
@@ -367,6 +395,8 @@ requires-dist = [
     { name = "django-filter", specifier = ">=25.2" },
     { name = "django-jazzmin", specifier = ">=3.0.1" },
     { name = "django-mptt", specifier = ">=0.18.0" },
+    { name = "django-webp", specifier = ">=3.0.0" },
+    { name = "django-webp-converter", specifier = ">=0.3.0" },
     { name = "djangorestframework", specifier = ">=3.16.1" },
     { name = "djangorestframework-simplejwt", specifier = ">=5.5.1" },
     { name = "dotenv", specifier = ">=0.9.9" },
@@ -715,4 +745,13 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/98/60/f174043244c5306c9988380d2cb10009f91563fc4b31293d27e17201af56/uritemplate-4.2.0.tar.gz", hash = "sha256:480c2ed180878955863323eea31b0ede668795de182617fef9c6ca09e6ec9d0e", size = 33267, upload-time = "2025-06-02T15:12:06.318Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a9/99/3ae339466c9183ea5b8ae87b34c0b897eda475d2aec2307cae60e5cd4f29/uritemplate-4.2.0-py3-none-any.whl", hash = "sha256:962201ba1c4edcab02e60f9a0d3821e82dfc5d2d6662a21abd533879bdb8a686", size = 11488, upload-time = "2025-06-02T15:12:03.405Z" },
+]
+
+[[package]]
+name = "whitenoise"
+version = "6.11.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/15/95/8c81ec6b6ebcbf8aca2de7603070ccf37dbb873b03f20708e0f7c1664bc6/whitenoise-6.11.0.tar.gz", hash = "sha256:0f5bfce6061ae6611cd9396a8231e088722e4fc67bc13a111be74c738d99375f", size = 26432, upload-time = "2025-09-18T09:16:10.995Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6c/e9/4366332f9295fe0647d7d3251ce18f5615fbcb12d02c79a26f8dba9221b3/whitenoise-6.11.0-py3-none-any.whl", hash = "sha256:b2aeb45950597236f53b5342b3121c5de69c8da0109362aee506ce88e022d258", size = 20197, upload-time = "2025-09-18T09:16:09.754Z" },
 ]

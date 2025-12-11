@@ -15,7 +15,7 @@ compile_msg:
 	python manage.py compilemessages -i .venv
 
 loaddata:
-	python3 manage.py loaddata branches users
+	python3 manage.py loaddata branches users products categories
 
 
 mig2:
@@ -25,4 +25,6 @@ flake:
 	flake8 .
 isort:
 	isort .
-
+docker:
+	sudo systemctl stop redis
+	docker start postgres_container redis_container

@@ -8,7 +8,7 @@ from products.models import (
     Highlight,
     Order,
     OrderItem,
-    Product,
+    Product, Region, District,
 )
 from rest_framework.serializers import ListSerializer, ModelSerializer
 
@@ -75,4 +75,15 @@ class OrderModelSerializer(ModelSerializer):
 class OrderItemModelSerializer(ModelSerializer):
     class Meta:
         model = OrderItem
+        fields = '__all__'
+
+
+class RegionModelSerializer(ModelSerializer):
+    class Meta:
+        model = Region
+        fields = '__all__'
+
+class DistrictModelSerializer(ModelSerializer):
+    class Meta:
+        model = District
         fields = '__all__'

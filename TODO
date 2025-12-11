@@ -52,19 +52,30 @@ api/v1/products/?category=203-foto-va-video-texnika
 11. Categories va products ga pagination qo'shildi                      Done +
 12. sms qayta yuborishda, vaqtini chiqarib qoyish (agar 1minut bolmagan bolsa)        Done +
 13. product listda order by qoshish (-narxi, -created_at)               Done +
+
+
 14. order qilish apisini chiqarish (address, phone, payment_type)
 zakaz qilishda,
+
 regions.json
 districts.json
-
 
 15. order list (history) apisini chiqarish
 16. order detail (history) apisini chiqarish
 
 16. userni admin, user ga bolaklash                                                   Done +
-17. verify code qilganidan keyin jwt token bilan user data sini qaytarish kk          Done +
+17. verify code qilganidan keyin jwt token bilan user data sini qaytarish kk     Done +
+
 18. product list va detail ochiq bolishi kerak (swaggerdagi qulfcha ham)
 19. product yaratishda permission qoshish kk (swaggerdagi qulfchani ham togrilash)
 20. (django command) oldingi rasmlarni barchasini webp formatiga otkazish db dagilarni ham ozgartirish
 21. rasmlarni avtomatik webp formatida saqlash
 22.  /en/api/v1/users/refresh-token/ qulfcha
+
+
+
+
+
+
+contextmanager 2 xil yoziladi dekorator bilan @async contextmanager
+yoki class Bilan yoziladi

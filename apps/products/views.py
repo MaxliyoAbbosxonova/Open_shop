@@ -3,11 +3,11 @@ from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.filters import OrderingFilter
 from rest_framework.generics import (
-    CreateAPIView,
     ListAPIView,
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
 )
+from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -19,7 +19,7 @@ from products.models import (
     Highlight,
     Order,
     OrderItem,
-    Product,
+    Product, Region, District,
 )
 from products.serializers import (
     BranchesModelSerializer,
@@ -28,7 +28,7 @@ from products.serializers import (
     CategoryModelSerializer,
     HighlightModelSerializer,
     ProductDetailModelSerializer,
-    ProductModelSerializer,
+    ProductModelSerializer, RegionModelSerializer, DistrictModelSerializer,
 )
 from shared.paginations import CustomPageNumberPagination
 from shared.permissions import UserPermission
@@ -43,23 +43,54 @@ class BranchesListCreateAPIView(ListCreateAPIView):
     ordering_fields = ["created_at"]
 
 
+# @extend_schema(tags=['Products'])
+# class ProductListAPIView(ListCreateAPIView):
+#     queryset = Product.objects.order_by('-created_at')
+#     serializer_class = ProductModelSerializer
+#     pagination_class = CustomPageNumberPagination
+#     permission_classes = (UserPermission,)
+#     filter_backends = [DjangoFilterBackend, OrderingFilter]
+#     ordering_fields = 'price', 'created_at'
+#     ordering = ('-created_at',)
+
+
 @extend_schema(tags=['Products'])
-class ProductListAPIView(ListCreateAPIView):
-    queryset = Product.objects.order_by('-created_at')
-    serializer_class = ProductModelSerializer
-    pagination_class = CustomPageNumberPagination
-    authentication_classes = ()
-    permission_classes = (UserPermission,)
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
-    ordering_fields = 'price', 'created_at'
-    ordering = ('-created_at',)
+class ProductListAPIView(APIView):
+    def get_permissions(self):
+        if self.request.method == 'GET':
+              permission_classes = [AllowAny,]  # Anyone can view
+        elif self.request.method == 'POST':
+              permission_classes = [IsAdminUser]
+
+        return [permission() for permission in permission_classes]
+
+    def get(self, request):
+        products = Product.objects.all()
+        serializer = ProductModelSerializer(products, many=True)
+        return Response(serializer.data)
+
+    def post(self, request,format=None):
+        serializer = ProductModelSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #
+    # queryset = Product.objects.order_by('-created_at')
+    # serializer_class = ProductModelSerializer
+    # pagination_class = CustomPageNumberPagination
+    # permission_classes = (UserPermission,)
+    # filter_backends = [DjangoFilterBackend, OrderingFilter]
+    # ordering_fields = 'price', 'created_at'
+    # ordering = ('-created_at',)
+
 
 
 @extend_schema(tags=['Products'])
 class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductDetailModelSerializer
-    permission_classes = (UserPermission,)
+    permission_classes = (IsAdminUser,)
 
 
 @extend_schema(tags=['Category'])
@@ -131,3 +162,12 @@ class OrderCreateApiView(APIView):
         order.total_amount = total_amount
         order.save(update_fields=['total_amount'])
         return Response({"message": "Order created successfully"}, status.HTTP_201_CREATED)
+
+
+class RegionListCreateAPIView(ListCreateAPIView):
+    queryset = Region.objects.all()
+    serializer_class = RegionModelSerializer
+
+class DistrictListCreateAPIView(ListCreateAPIView):
+    queryset = District.objects.all()
+    serializer_class = DistrictModelSerializer

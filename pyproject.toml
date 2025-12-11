@@ -19,6 +19,8 @@ dependencies = [
     "flake8>=7.3.0",
     "redis>=7.0.1",
     "django-filter>=25.2",
+    "django-webp-converter>=0.3.0",
+    "django-webp>=3.0.0",
 ]
 
 

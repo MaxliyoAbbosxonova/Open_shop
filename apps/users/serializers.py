@@ -11,7 +11,7 @@ from users.models import User
 class UserModelSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = "__all__"
+        fields = "first_name", "last_name", "phone", "email"
         extra_kwargs = {'password': {'write_only': True}}
 
 
